@@ -1,0 +1,106 @@
+{
+ "host_network_namespace": "net:[4026531840]",
+ "sampling_passes": 1170,
+ "interval_s": 0.5,
+ "checker_cpus_allowed": "72-143",
+ "work_directory": "/path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/",
+ "processes": [
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 471,
+   "pids": [
+    1315266,
+    1317711,
+    1321609,
+    1324237,
+    1326792,
+    1330965,
+    1331363,
+    1333099,
+    1334583,
+    1335890,
+    1337002
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 1140,
+   "pids": [
+    1315477,
+    1316263,
+    1317955,
+    1319667,
+    1321855,
+    1323277,
+    1324477,
+    1325377,
+    1326998,
+    1327930,
+    1331599,
+    1332754,
+    1333313,
+    1334030,
+    1334825,
+    1335460,
+    1336100,
+    1336621,
+    1337247,
+    1337925
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 683,
+   "pids": [
+    1316051,
+    1319413,
+    1323063,
+    1325167,
+    1327635,
+    1332536,
+    1333819,
+    1335247,
+    1336414,
+    1337680
+   ]
+  }
+ ],
+ "network_namespaces": {
+  "net:[4026542154]": {
+   "first_seen_pid": 1315266,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  }
+ }
+}

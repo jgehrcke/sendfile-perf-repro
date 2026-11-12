@@ -1,0 +1,55 @@
+{
+  "name": "patched-r4",
+  "requests": 20000,
+  "warmup_requests": 0,
+  "warmup_seconds": 0,
+  "warmup_request_seconds": 0,
+  "warmup_covered_chunks": 0,
+  "warmup_covered_all_chunks": false,
+  "concurrency": 10,
+  "max_incoming_responses": 9,
+  "range_bytes": 1024,
+  "chunk_count": 1,
+  "transferred_bytes": 20480000,
+  "wall_seconds": 0.552620697,
+  "registry_cpu_seconds": 4.74,
+  "registry_user_cpu_seconds": 3.86,
+  "registry_kernel_cpu_seconds": 0.88,
+  "registry_cpu_one_core_percent": 857.7311754213939,
+  "registry_cpu_host_percent": 23.82586598392761,
+  "throughput_mib_per_sec": 35.34295784799388,
+  "registry_cpu_seconds_per_gib": 248.51251200000002,
+  "registry_cpu_ticks": 474,
+  "registry_user_cpu_ticks": 386,
+  "registry_kernel_cpu_ticks": 88,
+  "host_logical_cpus": 36,
+  "whole_blob": true,
+  "blob_count": 1,
+  "client_cpu_seconds": 1.406072,
+  "pinned_cpus_busy_seconds": 6.02,
+  "cold_cache_pages": 0,
+  "cold_cache_resident_pages_before": 0,
+  "cold_cache_resident_pages_after": 0,
+  "registry_placement": {
+    "pid": 2499383,
+    "threads": 34,
+    "cpus_allowed": [
+      "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+    ],
+    "numa_policies": [
+      "bind:0"
+    ],
+    "net_namespace": "net:[4026542373]"
+  },
+  "client_placement": {
+    "pid": 2499593,
+    "threads": 27,
+    "cpus_allowed": [
+      "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+    ],
+    "numa_policies": [
+      "bind:0"
+    ],
+    "net_namespace": "net:[4026542373]"
+  }
+}

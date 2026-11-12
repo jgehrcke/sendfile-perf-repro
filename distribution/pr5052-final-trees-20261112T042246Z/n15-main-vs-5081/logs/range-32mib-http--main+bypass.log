@@ -1,0 +1,142 @@
+==> loopback_net=isolated (entered after the builds)
+==> NUMA same-socket pinning active: node 0, registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71; detected nodes with CPUs: 0 1
+==> settings: addr=127.0.0.1:55300 blob=536870912B blobs=1 whole_blob=0 cold_cache=0 lifetimes=3 variants=both chunk=33554432B requests=1000 concurrency=10 auto_target_seconds=1.0 sweep_auto_target_seconds="1.0" warmup=one-request-per-chunk-once-per-variant numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+==> fetching /path/to/sendfile-perf-repro/distribution/gh-pr/distribution refs
+==> using distribution commit f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b (f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b)
+==> keeping cached unpatched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-unpatched
+==> keeping cached patched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-patched
+==> LOOPBACK_NET=isolated: re-executing in a private network namespace
+==> loopback_net=isolated net_namespace=net:[4026542381] host_net_namespace=net:[4026531840] interfaces=lo netfilter_rules=empty(nft-list-ruleset)
+==> NUMA same-socket pinning active: node 0, registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71; detected nodes with CPUs: 0 1
+==> settings: addr=127.0.0.1:55300 blob=536870912B blobs=1 whole_blob=0 cold_cache=0 lifetimes=3 variants=both chunk=33554432B requests=1000 concurrency=10 auto_target_seconds=1.0 sweep_auto_target_seconds="1.0" warmup=one-request-per-chunk-once-per-variant numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+==> using distribution commit f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b (f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b)
+==> keeping cached unpatched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-unpatched
+==> keeping cached patched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-patched
+==> preparing deterministic OCI image artifact
+==> benchmark transport: http (HTTP/1.1), Go: go version go1.26.10 linux/arm64
+==> seeding local registry storage; this is not a measured run
+==> launching temporary storage-seeding registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-storage-seed.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> temporary storage-seeding registry ready with pid 264163
+==> blob already present: sha256:9a0fc9a9050ee258defddb21fb78fd21842ddc0e7be1153fca0b8b20a73156b1
+==> blob already present: sha256:36a8358de170f1cefb2c591fcca2f84ed460a69504c573cb4286c86dec9029ad
+==> image manifest already present: repro/sendfile-range:layer-36a8358de170f1ce
+==> terminating temporary storage-seeding registry pid 264163 on 127.0.0.1:55300
+==> terminated temporary storage-seeding registry pid 264163
+==> process lifetime 1 of 3
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 264453
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: warming page cache and connections with 16 GETs: every chunk of every blob, at least one per connection
+unpatched: warmup=0.324s selected_requests=1000 concurrency=10 chunks=16 covered_all=true
+unpatched: starting timed repetition 1 of 5
+unpatched-r1: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.055s registry_cpu_total=10.670s registry_cpu_user=3.130s registry_cpu_kernel=7.540s cpu(one-core)=1011.6% cpu(host)=28.10% throughput=30337.7 MiB/s cpu_per_GiB=0.341s
+unpatched: starting timed repetition 2 of 5
+unpatched-r2: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.056s registry_cpu_total=10.730s registry_cpu_user=3.200s registry_cpu_kernel=7.530s cpu(one-core)=1015.9% cpu(host)=28.22% throughput=30297.9 MiB/s cpu_per_GiB=0.343s
+unpatched: starting timed repetition 3 of 5
+unpatched-r3: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.061s registry_cpu_total=10.780s registry_cpu_user=3.240s registry_cpu_kernel=7.540s cpu(one-core)=1016.4% cpu(host)=28.23% throughput=30172.4 MiB/s cpu_per_GiB=0.345s
+unpatched: starting timed repetition 4 of 5
+unpatched-r4: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.054s registry_cpu_total=10.740s registry_cpu_user=3.130s registry_cpu_kernel=7.610s cpu(one-core)=1018.6% cpu(host)=28.30% throughput=30350.0 MiB/s cpu_per_GiB=0.344s
+unpatched: starting timed repetition 5 of 5
+unpatched-r5: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.058s registry_cpu_total=10.750s registry_cpu_user=3.120s registry_cpu_kernel=7.630s cpu(one-core)=1015.8% cpu(host)=28.22% throughput=30238.2 MiB/s cpu_per_GiB=0.344s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 264453 on 127.0.0.1:55300
+==> terminated unpatched registry pid 264453
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 265210
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: warming page cache and connections with 16 GETs: every chunk of every blob, at least one per connection
+patched: warmup=0.320s selected_requests=1000 concurrency=10 chunks=16 covered_all=true
+patched: starting timed repetition 1 of 5
+patched-r1: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.864s registry_cpu_total=8.660s registry_cpu_user=0.850s registry_cpu_kernel=7.810s cpu(one-core)=1002.3% cpu(host)=27.84% throughput=37036.9 MiB/s cpu_per_GiB=0.277s
+patched: starting timed repetition 2 of 5
+patched-r2: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.865s registry_cpu_total=8.670s registry_cpu_user=0.830s registry_cpu_kernel=7.840s cpu(one-core)=1001.7% cpu(host)=27.83% throughput=36973.5 MiB/s cpu_per_GiB=0.277s
+patched: starting timed repetition 3 of 5
+patched-r3: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.864s registry_cpu_total=8.650s registry_cpu_user=0.810s registry_cpu_kernel=7.840s cpu(one-core)=1000.7% cpu(host)=27.80% throughput=37018.9 MiB/s cpu_per_GiB=0.277s
+patched: starting timed repetition 4 of 5
+patched-r4: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.863s registry_cpu_total=8.640s registry_cpu_user=0.840s registry_cpu_kernel=7.800s cpu(one-core)=1001.3% cpu(host)=27.81% throughput=37083.8 MiB/s cpu_per_GiB=0.276s
+patched: starting timed repetition 5 of 5
+patched-r5: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.862s registry_cpu_total=8.650s registry_cpu_user=0.840s registry_cpu_kernel=7.810s cpu(one-core)=1003.7% cpu(host)=27.88% throughput=37130.2 MiB/s cpu_per_GiB=0.277s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 265210 on 127.0.0.1:55300
+==> terminated patched registry pid 265210
+==> process lifetime 2 of 3
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 265714
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: warming page cache and connections with 16 GETs: every chunk of every blob, at least one per connection
+unpatched: warmup=0.324s selected_requests=1000 concurrency=10 chunks=16 covered_all=true
+unpatched: starting timed repetition 1 of 5
+unpatched-r1: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.051s registry_cpu_total=10.650s registry_cpu_user=3.050s registry_cpu_kernel=7.600s cpu(one-core)=1013.3% cpu(host)=28.15% throughput=30447.8 MiB/s cpu_per_GiB=0.341s
+unpatched: starting timed repetition 2 of 5
+unpatched-r2: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.054s registry_cpu_total=10.700s registry_cpu_user=3.140s registry_cpu_kernel=7.560s cpu(one-core)=1014.8% cpu(host)=28.19% throughput=30347.7 MiB/s cpu_per_GiB=0.342s
+unpatched: starting timed repetition 3 of 5
+unpatched-r3: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.055s registry_cpu_total=10.700s registry_cpu_user=3.190s registry_cpu_kernel=7.510s cpu(one-core)=1014.0% cpu(host)=28.17% throughput=30325.4 MiB/s cpu_per_GiB=0.342s
+unpatched: starting timed repetition 4 of 5
+unpatched-r4: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.056s registry_cpu_total=10.740s registry_cpu_user=3.180s registry_cpu_kernel=7.560s cpu(one-core)=1017.5% cpu(host)=28.26% throughput=30316.5 MiB/s cpu_per_GiB=0.344s
+unpatched: starting timed repetition 5 of 5
+unpatched-r5: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.052s registry_cpu_total=10.730s registry_cpu_user=3.150s registry_cpu_kernel=7.580s cpu(one-core)=1019.6% cpu(host)=28.32% throughput=30406.3 MiB/s cpu_per_GiB=0.343s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 265714 on 127.0.0.1:55300
+==> terminated unpatched registry pid 265714
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 266248
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: warming page cache and connections with 16 GETs: every chunk of every blob, at least one per connection
+patched: warmup=0.320s selected_requests=1000 concurrency=10 chunks=16 covered_all=true
+patched: starting timed repetition 1 of 5
+patched-r1: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.858s registry_cpu_total=8.600s registry_cpu_user=0.830s registry_cpu_kernel=7.770s cpu(one-core)=1001.9% cpu(host)=27.83% throughput=37281.6 MiB/s cpu_per_GiB=0.275s
+patched: starting timed repetition 2 of 5
+patched-r2: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.862s registry_cpu_total=8.620s registry_cpu_user=0.850s registry_cpu_kernel=7.770s cpu(one-core)=999.6% cpu(host)=27.77% throughput=37109.3 MiB/s cpu_per_GiB=0.276s
+patched: starting timed repetition 3 of 5
+patched-r3: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.858s registry_cpu_total=8.610s registry_cpu_user=0.870s registry_cpu_kernel=7.740s cpu(one-core)=1003.7% cpu(host)=27.88% throughput=37301.9 MiB/s cpu_per_GiB=0.276s
+patched: starting timed repetition 4 of 5
+patched-r4: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.857s registry_cpu_total=8.600s registry_cpu_user=0.820s registry_cpu_kernel=7.780s cpu(one-core)=1003.2% cpu(host)=27.87% throughput=37326.6 MiB/s cpu_per_GiB=0.275s
+patched: starting timed repetition 5 of 5
+patched-r5: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.863s registry_cpu_total=8.640s registry_cpu_user=0.810s registry_cpu_kernel=7.830s cpu(one-core)=1000.8% cpu(host)=27.80% throughput=37066.8 MiB/s cpu_per_GiB=0.276s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 266248 on 127.0.0.1:55300
+==> terminated patched registry pid 266248
+==> process lifetime 3 of 3
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 266915
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: warming page cache and connections with 16 GETs: every chunk of every blob, at least one per connection
+unpatched: warmup=0.323s selected_requests=1000 concurrency=10 chunks=16 covered_all=true
+unpatched: starting timed repetition 1 of 5
+unpatched-r1: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.046s registry_cpu_total=10.570s registry_cpu_user=3.030s registry_cpu_kernel=7.540s cpu(one-core)=1010.2% cpu(host)=28.06% throughput=30583.0 MiB/s cpu_per_GiB=0.338s
+unpatched: starting timed repetition 2 of 5
+unpatched-r2: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.048s registry_cpu_total=10.620s registry_cpu_user=3.020s registry_cpu_kernel=7.600s cpu(one-core)=1012.9% cpu(host)=28.14% throughput=30520.5 MiB/s cpu_per_GiB=0.340s
+unpatched: starting timed repetition 3 of 5
+unpatched-r3: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.047s registry_cpu_total=10.640s registry_cpu_user=2.980s registry_cpu_kernel=7.660s cpu(one-core)=1016.5% cpu(host)=28.24% throughput=30570.5 MiB/s cpu_per_GiB=0.340s
+unpatched: starting timed repetition 4 of 5
+unpatched-r4: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.052s registry_cpu_total=10.680s registry_cpu_user=3.200s registry_cpu_kernel=7.480s cpu(one-core)=1015.1% cpu(host)=28.20% throughput=30415.6 MiB/s cpu_per_GiB=0.342s
+unpatched: starting timed repetition 5 of 5
+unpatched-r5: requests=1000 concurrency=10 max_incoming_responses=10 wall=1.046s registry_cpu_total=10.670s registry_cpu_user=3.050s registry_cpu_kernel=7.620s cpu(one-core)=1019.7% cpu(host)=28.33% throughput=30582.0 MiB/s cpu_per_GiB=0.341s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 266915 on 127.0.0.1:55300
+==> terminated unpatched registry pid 266915
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T043059Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 267435
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: warming page cache and connections with 16 GETs: every chunk of every blob, at least one per connection
+patched: warmup=0.319s selected_requests=1000 concurrency=10 chunks=16 covered_all=true
+patched: starting timed repetition 1 of 5
+patched-r1: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.860s registry_cpu_total=8.600s registry_cpu_user=0.810s registry_cpu_kernel=7.790s cpu(one-core)=999.6% cpu(host)=27.77% throughput=37195.4 MiB/s cpu_per_GiB=0.275s
+patched: starting timed repetition 2 of 5
+patched-r2: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.858s registry_cpu_total=8.600s registry_cpu_user=0.800s registry_cpu_kernel=7.800s cpu(one-core)=1002.2% cpu(host)=27.84% throughput=37290.5 MiB/s cpu_per_GiB=0.275s
+patched: starting timed repetition 3 of 5
+patched-r3: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.858s registry_cpu_total=8.580s registry_cpu_user=0.810s registry_cpu_kernel=7.770s cpu(one-core)=1000.5% cpu(host)=27.79% throughput=37314.4 MiB/s cpu_per_GiB=0.275s
+patched: starting timed repetition 4 of 5
+patched-r4: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.857s registry_cpu_total=8.590s registry_cpu_user=0.890s registry_cpu_kernel=7.700s cpu(one-core)=1002.9% cpu(host)=27.86% throughput=37359.9 MiB/s cpu_per_GiB=0.275s
+patched: starting timed repetition 5 of 5
+patched-r5: requests=1000 concurrency=10 max_incoming_responses=10 wall=0.861s registry_cpu_total=8.590s registry_cpu_user=0.820s registry_cpu_kernel=7.770s cpu(one-core)=998.0% cpu(host)=27.72% throughput=37177.1 MiB/s cpu_per_GiB=0.275s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 267435 on 127.0.0.1:55300
+==> terminated patched registry pid 267435
+==> done; session results: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/results/20261112T043059Z

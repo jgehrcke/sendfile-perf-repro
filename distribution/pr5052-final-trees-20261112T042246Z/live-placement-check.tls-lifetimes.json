@@ -1,0 +1,465 @@
+{
+ "host_network_namespace": "net:[4026531840]",
+ "sampling_passes": 593,
+ "interval_s": 0.5,
+ "checker_cpus_allowed": "72-143",
+ "work_directory": "/path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/",
+ "processes": [
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542379]",
+   "samples": 31,
+   "pids": [
+    278150,
+    279633,
+    280515,
+    281402,
+    282245,
+    283086,
+    284076,
+    284966,
+    285853,
+    286693,
+    287741,
+    288673
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542379]",
+   "samples": 49,
+   "pids": [
+    278359,
+    279001,
+    279840,
+    280288,
+    280725,
+    281123,
+    281624,
+    282054,
+    282452,
+    282863,
+    283373,
+    283897,
+    284289,
+    284786,
+    285178,
+    285627,
+    286056,
+    286450,
+    286899,
+    287337,
+    288002,
+    288434,
+    288889,
+    289408
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542379]",
+   "samples": 30,
+   "pids": [
+    278674,
+    280072,
+    280912,
+    281847,
+    282644,
+    283632,
+    284566,
+    285410,
+    286239,
+    287087,
+    288213,
+    289165
+   ]
+  },
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542148]",
+   "samples": 73,
+   "pids": [
+    290766,
+    291095,
+    292097,
+    293365,
+    294683,
+    296853,
+    298054,
+    299403,
+    300570,
+    302106,
+    303031,
+    303935,
+    304927
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542148]",
+   "samples": 144,
+   "pids": [
+    291297,
+    291832,
+    292353,
+    292909,
+    293647,
+    294379,
+    294985,
+    295903,
+    297059,
+    297671,
+    298310,
+    298856,
+    299611,
+    300206,
+    300812,
+    301325,
+    302323,
+    302768,
+    303243,
+    303736,
+    304142,
+    304651,
+    305137,
+    305574
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542148]",
+   "samples": 84,
+   "pids": [
+    291625,
+    292702,
+    294132,
+    295691,
+    297459,
+    298592,
+    300007,
+    301066,
+    302525,
+    303524,
+    304437,
+    305336
+   ]
+  },
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542374]",
+   "samples": 23,
+   "pids": [
+    307143,
+    308147,
+    309057,
+    309945,
+    310825,
+    311650,
+    312514,
+    313284,
+    314086,
+    315023,
+    315899,
+    316883
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542374]",
+   "samples": 40,
+   "pids": [
+    307371,
+    307967,
+    308359,
+    308842,
+    309306,
+    309762,
+    310154,
+    310629,
+    311036,
+    311472,
+    311857,
+    312324,
+    312723,
+    313106,
+    313508,
+    313901,
+    314292,
+    314800,
+    315267,
+    315685,
+    316117,
+    316696,
+    317099,
+    317517
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542374]",
+   "samples": 22,
+   "pids": [
+    307680,
+    308589,
+    309546,
+    310378,
+    311216,
+    312119,
+    312904,
+    313689,
+    314545,
+    315450,
+    316466,
+    317300
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "port-free",
+   "cpus_allowed_of_threads": [
+    "0-143"
+   ],
+   "numa_policies": [
+    "default"
+   ],
+   "network_namespace": "net:[4026542374]",
+   "samples": 1,
+   "pids": [
+    308581
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "image",
+   "cpus_allowed_of_threads": [
+    "0-143"
+   ],
+   "numa_policies": [
+    "default"
+   ],
+   "network_namespace": "net:[4026542151]",
+   "samples": 1,
+   "pids": [
+    318514
+   ]
+  },
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542151]",
+   "samples": 148,
+   "pids": [
+    319081,
+    320394,
+    321547,
+    322678,
+    324118,
+    325292,
+    326327,
+    327440,
+    328623,
+    329818,
+    330908,
+    332258
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542151]",
+   "samples": 286,
+   "pids": [
+    319365,
+    320071,
+    320600,
+    321185,
+    321753,
+    322230,
+    322895,
+    323762,
+    324325,
+    324861,
+    325538,
+    326026,
+    326581,
+    327148,
+    327684,
+    328356,
+    328865,
+    329429,
+    330023,
+    330502,
+    331116,
+    331708,
+    332466,
+    333003
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542151]",
+   "samples": 150,
+   "pids": [
+    319861,
+    320933,
+    322018,
+    323518,
+    324647,
+    325805,
+    326897,
+    328145,
+    329177,
+    330298,
+    331495,
+    332760
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "port-free",
+   "cpus_allowed_of_threads": [
+    "0-143"
+   ],
+   "numa_policies": [
+    "default"
+   ],
+   "network_namespace": "net:[4026542151]",
+   "samples": 1,
+   "pids": [
+    329810
+   ]
+  }
+ ],
+ "network_namespaces": {
+  "net:[4026542379]": {
+   "first_seen_pid": 278150,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  },
+  "net:[4026542148]": {
+   "first_seen_pid": 290766,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  },
+  "net:[4026542374]": {
+   "first_seen_pid": 307143,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  },
+  "net:[4026542151]": {
+   "first_seen_pid": 318514,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  }
+ }
+}

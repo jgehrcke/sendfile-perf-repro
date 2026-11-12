@@ -1,0 +1,387 @@
+2026-11-12T04:33:46Z start tls-lifetimes 5081-vs-5052
+[04:33:46] 4 harness invocations; n = 12 x 3 = 36 repetitions per arm and case; results in /path/to/sendfile-perf-repro/distribution/repro/pr5052-final-trees-20261112T042246Z/tls-lifetimes-5081-vs-5052
+[04:33:46] invocation 1 of 4
+[04:33:47] starting whole-4mib-tls--main+bypass: 12 lifetime(s) x 3 repetition(s), 1000 requests per repetition, concurrency 10
+[04:33:47]   building unpatched registry
+[04:33:52]   whole-4mib-tls main: lifetime 1/12, repetition 1/3: registry total CPU time 2.400 s, wall time 0.250 s
+[04:33:52]   whole-4mib-tls main: lifetime 1/12, repetition 2/3: registry total CPU time 2.390 s, wall time 0.249 s
+[04:33:52]   whole-4mib-tls main: lifetime 1/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.248 s
+[04:33:53]   whole-4mib-tls bypass: lifetime 1/12, repetition 1/3: registry total CPU time 2.330 s, wall time 0.243 s
+[04:33:53]   whole-4mib-tls bypass: lifetime 1/12, repetition 2/3: registry total CPU time 2.310 s, wall time 0.241 s
+[04:33:53]   whole-4mib-tls bypass: lifetime 1/12, repetition 3/3: registry total CPU time 2.330 s, wall time 0.245 s
+[04:33:54]   whole-4mib-tls main: lifetime 2/12, repetition 1/3: registry total CPU time 2.450 s, wall time 0.254 s
+[04:33:55]   whole-4mib-tls main: lifetime 2/12, repetition 2/3: registry total CPU time 2.470 s, wall time 0.254 s
+[04:33:55]   whole-4mib-tls main: lifetime 2/12, repetition 3/3: registry total CPU time 2.460 s, wall time 0.253 s
+[04:33:56]   whole-4mib-tls bypass: lifetime 2/12, repetition 1/3: registry total CPU time 2.320 s, wall time 0.244 s
+[04:33:56]   whole-4mib-tls bypass: lifetime 2/12, repetition 2/3: registry total CPU time 2.330 s, wall time 0.244 s
+[04:33:56]   whole-4mib-tls bypass: lifetime 2/12, repetition 3/3: registry total CPU time 2.340 s, wall time 0.244 s
+[04:33:57]   whole-4mib-tls main: lifetime 3/12, repetition 1/3: registry total CPU time 2.410 s, wall time 0.250 s
+[04:33:57]   whole-4mib-tls main: lifetime 3/12, repetition 2/3: registry total CPU time 2.410 s, wall time 0.248 s
+[04:33:58]   whole-4mib-tls main: lifetime 3/12, repetition 3/3: registry total CPU time 2.410 s, wall time 0.249 s
+[04:33:59]   whole-4mib-tls bypass: lifetime 3/12, repetition 1/3: registry total CPU time 2.430 s, wall time 0.250 s
+[04:33:59]   whole-4mib-tls bypass: lifetime 3/12, repetition 2/3: registry total CPU time 2.430 s, wall time 0.252 s
+[04:33:59]   whole-4mib-tls bypass: lifetime 3/12, repetition 3/3: registry total CPU time 2.410 s, wall time 0.249 s
+[04:34:00]   whole-4mib-tls main: lifetime 4/12, repetition 1/3: registry total CPU time 2.400 s, wall time 0.249 s
+[04:34:00]   whole-4mib-tls main: lifetime 4/12, repetition 2/3: registry total CPU time 2.410 s, wall time 0.251 s
+[04:34:00]   whole-4mib-tls main: lifetime 4/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.247 s
+[04:34:01]   whole-4mib-tls bypass: lifetime 4/12, repetition 1/3: registry total CPU time 2.340 s, wall time 0.246 s
+[04:34:02]   whole-4mib-tls bypass: lifetime 4/12, repetition 2/3: registry total CPU time 2.340 s, wall time 0.244 s
+[04:34:02]   whole-4mib-tls bypass: lifetime 4/12, repetition 3/3: registry total CPU time 2.340 s, wall time 0.244 s
+[04:34:03]   whole-4mib-tls main: lifetime 5/12, repetition 1/3: registry total CPU time 2.410 s, wall time 0.251 s
+[04:34:03]   whole-4mib-tls main: lifetime 5/12, repetition 2/3: registry total CPU time 2.420 s, wall time 0.250 s
+[04:34:03]   whole-4mib-tls main: lifetime 5/12, repetition 3/3: registry total CPU time 2.390 s, wall time 0.249 s
+[04:34:04]   whole-4mib-tls bypass: lifetime 5/12, repetition 1/3: registry total CPU time 2.350 s, wall time 0.242 s
+[04:34:04]   whole-4mib-tls bypass: lifetime 5/12, repetition 2/3: registry total CPU time 2.330 s, wall time 0.242 s
+[04:34:05]   whole-4mib-tls bypass: lifetime 5/12, repetition 3/3: registry total CPU time 2.340 s, wall time 0.243 s
+[04:34:05]   whole-4mib-tls main: lifetime 6/12, repetition 1/3: registry total CPU time 2.380 s, wall time 0.251 s
+[04:34:06]   whole-4mib-tls main: lifetime 6/12, repetition 2/3: registry total CPU time 2.400 s, wall time 0.252 s
+[04:34:06]   whole-4mib-tls main: lifetime 6/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.249 s
+[04:34:07]   whole-4mib-tls bypass: lifetime 6/12, repetition 1/3: registry total CPU time 2.330 s, wall time 0.244 s
+[04:34:07]   whole-4mib-tls bypass: lifetime 6/12, repetition 2/3: registry total CPU time 2.320 s, wall time 0.245 s
+[04:34:07]   whole-4mib-tls bypass: lifetime 6/12, repetition 3/3: registry total CPU time 2.330 s, wall time 0.244 s
+[04:34:08]   whole-4mib-tls main: lifetime 7/12, repetition 1/3: registry total CPU time 2.420 s, wall time 0.251 s
+[04:34:09]   whole-4mib-tls main: lifetime 7/12, repetition 2/3: registry total CPU time 2.420 s, wall time 0.250 s
+[04:34:09]   whole-4mib-tls main: lifetime 7/12, repetition 3/3: registry total CPU time 2.390 s, wall time 0.249 s
+[04:34:10]   whole-4mib-tls bypass: lifetime 7/12, repetition 1/3: registry total CPU time 2.340 s, wall time 0.245 s
+[04:34:10]   whole-4mib-tls bypass: lifetime 7/12, repetition 2/3: registry total CPU time 2.350 s, wall time 0.243 s
+[04:34:10]   whole-4mib-tls bypass: lifetime 7/12, repetition 3/3: registry total CPU time 2.330 s, wall time 0.242 s
+[04:34:11]   whole-4mib-tls main: lifetime 8/12, repetition 1/3: registry total CPU time 2.390 s, wall time 0.249 s
+[04:34:11]   whole-4mib-tls main: lifetime 8/12, repetition 2/3: registry total CPU time 2.400 s, wall time 0.251 s
+[04:34:12]   whole-4mib-tls main: lifetime 8/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.248 s
+[04:34:12]   whole-4mib-tls bypass: lifetime 8/12, repetition 1/3: registry total CPU time 2.310 s, wall time 0.242 s
+[04:34:13]   whole-4mib-tls bypass: lifetime 8/12, repetition 2/3: registry total CPU time 2.320 s, wall time 0.241 s
+[04:34:13]   whole-4mib-tls bypass: lifetime 8/12, repetition 3/3: registry total CPU time 2.320 s, wall time 0.243 s
+[04:34:14]   whole-4mib-tls main: lifetime 9/12, repetition 1/3: registry total CPU time 2.380 s, wall time 0.249 s
+[04:34:14]   whole-4mib-tls main: lifetime 9/12, repetition 2/3: registry total CPU time 2.390 s, wall time 0.245 s
+[04:34:14]   whole-4mib-tls main: lifetime 9/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.249 s
+[04:34:15]   whole-4mib-tls bypass: lifetime 9/12, repetition 1/3: registry total CPU time 2.330 s, wall time 0.243 s
+[04:34:15]   whole-4mib-tls bypass: lifetime 9/12, repetition 2/3: registry total CPU time 2.340 s, wall time 0.244 s
+[04:34:16]   whole-4mib-tls bypass: lifetime 9/12, repetition 3/3: registry total CPU time 2.330 s, wall time 0.243 s
+[04:34:17]   whole-4mib-tls main: lifetime 10/12, repetition 1/3: registry total CPU time 2.420 s, wall time 0.251 s
+[04:34:17]   whole-4mib-tls main: lifetime 10/12, repetition 2/3: registry total CPU time 2.390 s, wall time 0.248 s
+[04:34:17]   whole-4mib-tls main: lifetime 10/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.249 s
+[04:34:18]   whole-4mib-tls bypass: lifetime 10/12, repetition 1/3: registry total CPU time 2.340 s, wall time 0.243 s
+[04:34:18]   whole-4mib-tls bypass: lifetime 10/12, repetition 2/3: registry total CPU time 2.340 s, wall time 0.245 s
+[04:34:19]   whole-4mib-tls bypass: lifetime 10/12, repetition 3/3: registry total CPU time 2.340 s, wall time 0.241 s
+[04:34:20]   whole-4mib-tls main: lifetime 11/12, repetition 1/3: registry total CPU time 2.410 s, wall time 0.251 s
+[04:34:20]   whole-4mib-tls main: lifetime 11/12, repetition 2/3: registry total CPU time 2.420 s, wall time 0.251 s
+[04:34:20]   whole-4mib-tls main: lifetime 11/12, repetition 3/3: registry total CPU time 2.420 s, wall time 0.250 s
+[04:34:21]   whole-4mib-tls bypass: lifetime 11/12, repetition 1/3: registry total CPU time 2.310 s, wall time 0.242 s
+[04:34:21]   whole-4mib-tls bypass: lifetime 11/12, repetition 2/3: registry total CPU time 2.320 s, wall time 0.242 s
+[04:34:21]   whole-4mib-tls bypass: lifetime 11/12, repetition 3/3: registry total CPU time 2.310 s, wall time 0.240 s
+[04:34:22]   whole-4mib-tls main: lifetime 12/12, repetition 1/3: registry total CPU time 2.390 s, wall time 0.249 s
+[04:34:23]   whole-4mib-tls main: lifetime 12/12, repetition 2/3: registry total CPU time 2.410 s, wall time 0.249 s
+[04:34:23]   whole-4mib-tls main: lifetime 12/12, repetition 3/3: registry total CPU time 2.400 s, wall time 0.250 s
+[04:34:24]   whole-4mib-tls bypass: lifetime 12/12, repetition 1/3: registry total CPU time 2.420 s, wall time 0.251 s
+[04:34:24]   whole-4mib-tls bypass: lifetime 12/12, repetition 2/3: registry total CPU time 2.440 s, wall time 0.251 s
+[04:34:24]   whole-4mib-tls bypass: lifetime 12/12, repetition 3/3: registry total CPU time 2.410 s, wall time 0.249 s
+[04:34:24] built main: source verified, go1.26.10, sha256 388736837f72
+[04:34:24] finished whole-4mib-tls--main+bypass in 38 s; placement and network namespace verified for every repetition
+[04:34:24] invocation 2 of 4
+[04:34:25] starting whole-32mib-tls--main+bypass: 12 lifetime(s) x 3 repetition(s), 500 requests per repetition, concurrency 10
+[04:34:27]   whole-32mib-tls main: lifetime 1/12, repetition 1/3: registry total CPU time 8.800 s, wall time 0.888 s
+[04:34:28]   whole-32mib-tls main: lifetime 1/12, repetition 2/3: registry total CPU time 8.850 s, wall time 0.895 s
+[04:34:29]   whole-32mib-tls main: lifetime 1/12, repetition 3/3: registry total CPU time 8.890 s, wall time 0.911 s
+[04:34:31]   whole-32mib-tls bypass: lifetime 1/12, repetition 1/3: registry total CPU time 8.810 s, wall time 0.899 s
+[04:34:32]   whole-32mib-tls bypass: lifetime 1/12, repetition 2/3: registry total CPU time 8.740 s, wall time 0.882 s
+[04:34:33]   whole-32mib-tls bypass: lifetime 1/12, repetition 3/3: registry total CPU time 8.800 s, wall time 0.899 s
+[04:34:34]   whole-32mib-tls main: lifetime 2/12, repetition 1/3: registry total CPU time 8.800 s, wall time 0.886 s
+[04:34:35]   whole-32mib-tls main: lifetime 2/12, repetition 2/3: registry total CPU time 8.760 s, wall time 0.884 s
+[04:34:36]   whole-32mib-tls main: lifetime 2/12, repetition 3/3: registry total CPU time 8.790 s, wall time 0.885 s
+[04:34:37]   whole-32mib-tls bypass: lifetime 2/12, repetition 1/3: registry total CPU time 8.750 s, wall time 0.882 s
+[04:34:38]   whole-32mib-tls bypass: lifetime 2/12, repetition 2/3: registry total CPU time 8.790 s, wall time 0.882 s
+[04:34:39]   whole-32mib-tls bypass: lifetime 2/12, repetition 3/3: registry total CPU time 8.760 s, wall time 0.882 s
+[04:34:41]   whole-32mib-tls main: lifetime 3/12, repetition 1/3: registry total CPU time 8.770 s, wall time 0.883 s
+[04:34:42]   whole-32mib-tls main: lifetime 3/12, repetition 2/3: registry total CPU time 8.770 s, wall time 0.882 s
+[04:34:43]   whole-32mib-tls main: lifetime 3/12, repetition 3/3: registry total CPU time 8.800 s, wall time 0.884 s
+[04:34:44]   whole-32mib-tls bypass: lifetime 3/12, repetition 1/3: registry total CPU time 8.670 s, wall time 0.874 s
+[04:34:45]   whole-32mib-tls bypass: lifetime 3/12, repetition 2/3: registry total CPU time 8.720 s, wall time 0.876 s
+[04:34:46]   whole-32mib-tls bypass: lifetime 3/12, repetition 3/3: registry total CPU time 8.700 s, wall time 0.874 s
+[04:34:47]   whole-32mib-tls main: lifetime 4/12, repetition 1/3: registry total CPU time 8.830 s, wall time 0.889 s
+[04:34:48]   whole-32mib-tls main: lifetime 4/12, repetition 2/3: registry total CPU time 8.810 s, wall time 0.887 s
+[04:34:49]   whole-32mib-tls main: lifetime 4/12, repetition 3/3: registry total CPU time 8.830 s, wall time 0.888 s
+[04:34:51]   whole-32mib-tls bypass: lifetime 4/12, repetition 1/3: registry total CPU time 8.810 s, wall time 0.907 s
+[04:34:52]   whole-32mib-tls bypass: lifetime 4/12, repetition 2/3: registry total CPU time 8.780 s, wall time 0.883 s
+[04:34:52]   whole-32mib-tls bypass: lifetime 4/12, repetition 3/3: registry total CPU time 8.800 s, wall time 0.886 s
+[04:34:54]   whole-32mib-tls main: lifetime 5/12, repetition 1/3: registry total CPU time 8.890 s, wall time 0.894 s
+[04:34:55]   whole-32mib-tls main: lifetime 5/12, repetition 2/3: registry total CPU time 8.860 s, wall time 0.892 s
+[04:34:56]   whole-32mib-tls main: lifetime 5/12, repetition 3/3: registry total CPU time 8.860 s, wall time 0.891 s
+[04:34:57]   whole-32mib-tls bypass: lifetime 5/12, repetition 1/3: registry total CPU time 8.740 s, wall time 0.881 s
+[04:34:58]   whole-32mib-tls bypass: lifetime 5/12, repetition 2/3: registry total CPU time 8.740 s, wall time 0.880 s
+[04:34:59]   whole-32mib-tls bypass: lifetime 5/12, repetition 3/3: registry total CPU time 8.750 s, wall time 0.879 s
+[04:35:01]   whole-32mib-tls main: lifetime 6/12, repetition 1/3: registry total CPU time 8.990 s, wall time 0.903 s
+[04:35:02]   whole-32mib-tls main: lifetime 6/12, repetition 2/3: registry total CPU time 8.990 s, wall time 0.903 s
+[04:35:03]   whole-32mib-tls main: lifetime 6/12, repetition 3/3: registry total CPU time 9.030 s, wall time 0.917 s
+[04:35:04]   whole-32mib-tls bypass: lifetime 6/12, repetition 1/3: registry total CPU time 8.730 s, wall time 0.879 s
+[04:35:05]   whole-32mib-tls bypass: lifetime 6/12, repetition 2/3: registry total CPU time 8.740 s, wall time 0.880 s
+[04:35:06]   whole-32mib-tls bypass: lifetime 6/12, repetition 3/3: registry total CPU time 8.760 s, wall time 0.882 s
+[04:35:07]   whole-32mib-tls main: lifetime 7/12, repetition 1/3: registry total CPU time 8.900 s, wall time 0.896 s
+[04:35:08]   whole-32mib-tls main: lifetime 7/12, repetition 2/3: registry total CPU time 8.890 s, wall time 0.899 s
+[04:35:09]   whole-32mib-tls main: lifetime 7/12, repetition 3/3: registry total CPU time 8.920 s, wall time 0.896 s
+[04:35:11]   whole-32mib-tls bypass: lifetime 7/12, repetition 1/3: registry total CPU time 8.720 s, wall time 0.878 s
+[04:35:12]   whole-32mib-tls bypass: lifetime 7/12, repetition 2/3: registry total CPU time 8.770 s, wall time 0.881 s
+[04:35:13]   whole-32mib-tls bypass: lifetime 7/12, repetition 3/3: registry total CPU time 8.810 s, wall time 0.889 s
+[04:35:14]   whole-32mib-tls main: lifetime 8/12, repetition 1/3: registry total CPU time 8.770 s, wall time 0.881 s
+[04:35:15]   whole-32mib-tls main: lifetime 8/12, repetition 2/3: registry total CPU time 8.760 s, wall time 0.884 s
+[04:35:16]   whole-32mib-tls main: lifetime 8/12, repetition 3/3: registry total CPU time 8.800 s, wall time 0.886 s
+[04:35:17]   whole-32mib-tls bypass: lifetime 8/12, repetition 1/3: registry total CPU time 8.750 s, wall time 0.879 s
+[04:35:18]   whole-32mib-tls bypass: lifetime 8/12, repetition 2/3: registry total CPU time 8.740 s, wall time 0.878 s
+[04:35:19]   whole-32mib-tls bypass: lifetime 8/12, repetition 3/3: registry total CPU time 8.780 s, wall time 0.883 s
+[04:35:21]   whole-32mib-tls main: lifetime 9/12, repetition 1/3: registry total CPU time 8.810 s, wall time 0.885 s
+[04:35:22]   whole-32mib-tls main: lifetime 9/12, repetition 2/3: registry total CPU time 8.800 s, wall time 0.887 s
+[04:35:22]   whole-32mib-tls main: lifetime 9/12, repetition 3/3: registry total CPU time 8.850 s, wall time 0.907 s
+[04:35:24]   whole-32mib-tls bypass: lifetime 9/12, repetition 1/3: registry total CPU time 8.730 s, wall time 0.883 s
+[04:35:25]   whole-32mib-tls bypass: lifetime 9/12, repetition 2/3: registry total CPU time 8.700 s, wall time 0.874 s
+[04:35:26]   whole-32mib-tls bypass: lifetime 9/12, repetition 3/3: registry total CPU time 8.730 s, wall time 0.879 s
+[04:35:27]   whole-32mib-tls main: lifetime 10/12, repetition 1/3: registry total CPU time 8.890 s, wall time 0.893 s
+[04:35:28]   whole-32mib-tls main: lifetime 10/12, repetition 2/3: registry total CPU time 8.940 s, wall time 0.899 s
+[04:35:29]   whole-32mib-tls main: lifetime 10/12, repetition 3/3: registry total CPU time 8.960 s, wall time 0.915 s
+[04:35:31]   whole-32mib-tls bypass: lifetime 10/12, repetition 1/3: registry total CPU time 8.800 s, wall time 0.885 s
+[04:35:32]   whole-32mib-tls bypass: lifetime 10/12, repetition 2/3: registry total CPU time 8.790 s, wall time 0.883 s
+[04:35:32]   whole-32mib-tls bypass: lifetime 10/12, repetition 3/3: registry total CPU time 8.800 s, wall time 0.883 s
+[04:35:34]   whole-32mib-tls main: lifetime 11/12, repetition 1/3: registry total CPU time 8.780 s, wall time 0.884 s
+[04:35:35]   whole-32mib-tls main: lifetime 11/12, repetition 2/3: registry total CPU time 8.780 s, wall time 0.886 s
+[04:35:36]   whole-32mib-tls main: lifetime 11/12, repetition 3/3: registry total CPU time 8.800 s, wall time 0.887 s
+[04:35:37]   whole-32mib-tls bypass: lifetime 11/12, repetition 1/3: registry total CPU time 8.680 s, wall time 0.873 s
+[04:35:38]   whole-32mib-tls bypass: lifetime 11/12, repetition 2/3: registry total CPU time 8.690 s, wall time 0.874 s
+[04:35:39]   whole-32mib-tls bypass: lifetime 11/12, repetition 3/3: registry total CPU time 8.690 s, wall time 0.874 s
+[04:35:41]   whole-32mib-tls main: lifetime 12/12, repetition 1/3: registry total CPU time 8.840 s, wall time 0.888 s
+[04:35:41]   whole-32mib-tls main: lifetime 12/12, repetition 2/3: registry total CPU time 8.830 s, wall time 0.887 s
+[04:35:42]   whole-32mib-tls main: lifetime 12/12, repetition 3/3: registry total CPU time 8.840 s, wall time 0.888 s
+[04:35:44]   whole-32mib-tls bypass: lifetime 12/12, repetition 1/3: registry total CPU time 8.670 s, wall time 0.870 s
+[04:35:45]   whole-32mib-tls bypass: lifetime 12/12, repetition 2/3: registry total CPU time 8.670 s, wall time 0.872 s
+[04:35:46]   whole-32mib-tls bypass: lifetime 12/12, repetition 3/3: registry total CPU time 8.650 s, wall time 0.871 s
+[04:35:46] finished whole-32mib-tls--main+bypass in 81 s; placement and network namespace verified for every repetition
+[04:35:46] invocation 3 of 4
+[04:35:46] starting range-1mib-tls--main+bypass: 12 lifetime(s) x 3 repetition(s), 1000 requests per repetition, concurrency 10
+[04:35:48]   range-1mib-tls main: lifetime 1/12, repetition 1/3: registry total CPU time 0.940 s, wall time 0.117 s
+[04:35:48]   range-1mib-tls main: lifetime 1/12, repetition 2/3: registry total CPU time 0.950 s, wall time 0.113 s
+[04:35:49]   range-1mib-tls main: lifetime 1/12, repetition 3/3: registry total CPU time 0.940 s, wall time 0.114 s
+[04:35:49]   range-1mib-tls bypass: lifetime 1/12, repetition 1/3: registry total CPU time 0.870 s, wall time 0.111 s
+[04:35:49]   range-1mib-tls bypass: lifetime 1/12, repetition 2/3: registry total CPU time 0.890 s, wall time 0.113 s
+[04:35:50]   range-1mib-tls bypass: lifetime 1/12, repetition 3/3: registry total CPU time 0.890 s, wall time 0.112 s
+[04:35:50]   range-1mib-tls main: lifetime 2/12, repetition 1/3: registry total CPU time 0.930 s, wall time 0.113 s
+[04:35:50]   range-1mib-tls main: lifetime 2/12, repetition 2/3: registry total CPU time 0.940 s, wall time 0.116 s
+[04:35:51]   range-1mib-tls main: lifetime 2/12, repetition 3/3: registry total CPU time 0.960 s, wall time 0.116 s
+[04:35:51]   range-1mib-tls bypass: lifetime 2/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:35:52]   range-1mib-tls bypass: lifetime 2/12, repetition 2/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:35:52]   range-1mib-tls bypass: lifetime 2/12, repetition 3/3: registry total CPU time 0.890 s, wall time 0.113 s
+[04:35:52]   range-1mib-tls main: lifetime 3/12, repetition 1/3: registry total CPU time 0.970 s, wall time 0.117 s
+[04:35:53]   range-1mib-tls main: lifetime 3/12, repetition 2/3: registry total CPU time 0.980 s, wall time 0.114 s
+[04:35:53]   range-1mib-tls main: lifetime 3/12, repetition 3/3: registry total CPU time 0.960 s, wall time 0.115 s
+[04:35:54]   range-1mib-tls bypass: lifetime 3/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.107 s
+[04:35:54]   range-1mib-tls bypass: lifetime 3/12, repetition 2/3: registry total CPU time 0.890 s, wall time 0.112 s
+[04:35:54]   range-1mib-tls bypass: lifetime 3/12, repetition 3/3: registry total CPU time 0.890 s, wall time 0.113 s
+[04:35:55]   range-1mib-tls main: lifetime 4/12, repetition 1/3: registry total CPU time 0.950 s, wall time 0.113 s
+[04:35:55]   range-1mib-tls main: lifetime 4/12, repetition 2/3: registry total CPU time 0.940 s, wall time 0.114 s
+[04:35:55]   range-1mib-tls main: lifetime 4/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.115 s
+[04:35:56]   range-1mib-tls bypass: lifetime 4/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:35:56]   range-1mib-tls bypass: lifetime 4/12, repetition 2/3: registry total CPU time 0.890 s, wall time 0.112 s
+[04:35:56]   range-1mib-tls bypass: lifetime 4/12, repetition 3/3: registry total CPU time 0.890 s, wall time 0.112 s
+[04:35:57]   range-1mib-tls main: lifetime 5/12, repetition 1/3: registry total CPU time 0.940 s, wall time 0.118 s
+[04:35:57]   range-1mib-tls main: lifetime 5/12, repetition 2/3: registry total CPU time 0.940 s, wall time 0.114 s
+[04:35:57]   range-1mib-tls main: lifetime 5/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.114 s
+[04:35:58]   range-1mib-tls bypass: lifetime 5/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.110 s
+[04:35:58]   range-1mib-tls bypass: lifetime 5/12, repetition 2/3: registry total CPU time 0.870 s, wall time 0.111 s
+[04:35:58]   range-1mib-tls bypass: lifetime 5/12, repetition 3/3: registry total CPU time 0.900 s, wall time 0.112 s
+[04:35:59]   range-1mib-tls main: lifetime 6/12, repetition 1/3: registry total CPU time 0.940 s, wall time 0.114 s
+[04:35:59]   range-1mib-tls main: lifetime 6/12, repetition 2/3: registry total CPU time 0.950 s, wall time 0.117 s
+[04:35:59]   range-1mib-tls main: lifetime 6/12, repetition 3/3: registry total CPU time 0.940 s, wall time 0.114 s
+[04:36:00]   range-1mib-tls bypass: lifetime 6/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:36:00]   range-1mib-tls bypass: lifetime 6/12, repetition 2/3: registry total CPU time 0.890 s, wall time 0.110 s
+[04:36:00]   range-1mib-tls bypass: lifetime 6/12, repetition 3/3: registry total CPU time 0.890 s, wall time 0.110 s
+[04:36:01]   range-1mib-tls main: lifetime 7/12, repetition 1/3: registry total CPU time 0.920 s, wall time 0.112 s
+[04:36:01]   range-1mib-tls main: lifetime 7/12, repetition 2/3: registry total CPU time 0.960 s, wall time 0.115 s
+[04:36:01]   range-1mib-tls main: lifetime 7/12, repetition 3/3: registry total CPU time 0.940 s, wall time 0.115 s
+[04:36:02]   range-1mib-tls bypass: lifetime 7/12, repetition 1/3: registry total CPU time 0.890 s, wall time 0.111 s
+[04:36:02]   range-1mib-tls bypass: lifetime 7/12, repetition 2/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:36:02]   range-1mib-tls bypass: lifetime 7/12, repetition 3/3: registry total CPU time 0.890 s, wall time 0.111 s
+[04:36:03]   range-1mib-tls main: lifetime 8/12, repetition 1/3: registry total CPU time 0.940 s, wall time 0.112 s
+[04:36:03]   range-1mib-tls main: lifetime 8/12, repetition 2/3: registry total CPU time 0.950 s, wall time 0.114 s
+[04:36:03]   range-1mib-tls main: lifetime 8/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.114 s
+[04:36:04]   range-1mib-tls bypass: lifetime 8/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.112 s
+[04:36:04]   range-1mib-tls bypass: lifetime 8/12, repetition 2/3: registry total CPU time 0.890 s, wall time 0.111 s
+[04:36:04]   range-1mib-tls bypass: lifetime 8/12, repetition 3/3: registry total CPU time 0.880 s, wall time 0.113 s
+[04:36:05]   range-1mib-tls main: lifetime 9/12, repetition 1/3: registry total CPU time 0.950 s, wall time 0.115 s
+[04:36:05]   range-1mib-tls main: lifetime 9/12, repetition 2/3: registry total CPU time 0.940 s, wall time 0.116 s
+[04:36:05]   range-1mib-tls main: lifetime 9/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.114 s
+[04:36:06]   range-1mib-tls bypass: lifetime 9/12, repetition 1/3: registry total CPU time 0.890 s, wall time 0.111 s
+[04:36:06]   range-1mib-tls bypass: lifetime 9/12, repetition 2/3: registry total CPU time 0.920 s, wall time 0.110 s
+[04:36:06]   range-1mib-tls bypass: lifetime 9/12, repetition 3/3: registry total CPU time 0.900 s, wall time 0.114 s
+[04:36:07]   range-1mib-tls main: lifetime 10/12, repetition 1/3: registry total CPU time 0.950 s, wall time 0.115 s
+[04:36:07]   range-1mib-tls main: lifetime 10/12, repetition 2/3: registry total CPU time 0.940 s, wall time 0.113 s
+[04:36:07]   range-1mib-tls main: lifetime 10/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.114 s
+[04:36:08]   range-1mib-tls bypass: lifetime 10/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.109 s
+[04:36:08]   range-1mib-tls bypass: lifetime 10/12, repetition 2/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:36:08]   range-1mib-tls bypass: lifetime 10/12, repetition 3/3: registry total CPU time 0.900 s, wall time 0.110 s
+[04:36:09]   range-1mib-tls main: lifetime 11/12, repetition 1/3: registry total CPU time 0.940 s, wall time 0.114 s
+[04:36:09]   range-1mib-tls main: lifetime 11/12, repetition 2/3: registry total CPU time 0.960 s, wall time 0.116 s
+[04:36:09]   range-1mib-tls main: lifetime 11/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.116 s
+[04:36:10]   range-1mib-tls bypass: lifetime 11/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:36:10]   range-1mib-tls bypass: lifetime 11/12, repetition 2/3: registry total CPU time 0.890 s, wall time 0.111 s
+[04:36:11]   range-1mib-tls bypass: lifetime 11/12, repetition 3/3: registry total CPU time 0.880 s, wall time 0.109 s
+[04:36:11]   range-1mib-tls main: lifetime 12/12, repetition 1/3: registry total CPU time 0.950 s, wall time 0.113 s
+[04:36:11]   range-1mib-tls main: lifetime 12/12, repetition 2/3: registry total CPU time 0.930 s, wall time 0.113 s
+[04:36:12]   range-1mib-tls main: lifetime 12/12, repetition 3/3: registry total CPU time 0.950 s, wall time 0.117 s
+[04:36:12]   range-1mib-tls bypass: lifetime 12/12, repetition 1/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:36:12]   range-1mib-tls bypass: lifetime 12/12, repetition 2/3: registry total CPU time 0.880 s, wall time 0.111 s
+[04:36:13]   range-1mib-tls bypass: lifetime 12/12, repetition 3/3: registry total CPU time 0.880 s, wall time 0.115 s
+[04:36:13] finished range-1mib-tls--main+bypass in 26 s; placement and network namespace verified for every repetition
+[04:36:13] invocation 4 of 4
+[04:36:13] starting range-32mib-tls--main+bypass: 12 lifetime(s) x 3 repetition(s), 1000 requests per repetition, concurrency 10
+[04:36:17]   range-32mib-tls main: lifetime 1/12, repetition 1/3: registry total CPU time 19.180 s, wall time 1.922 s
+[04:36:19]   range-32mib-tls main: lifetime 1/12, repetition 2/3: registry total CPU time 19.200 s, wall time 1.925 s
+[04:36:21]   range-32mib-tls main: lifetime 1/12, repetition 3/3: registry total CPU time 19.180 s, wall time 1.927 s
+[04:36:23]   range-32mib-tls bypass: lifetime 1/12, repetition 1/3: registry total CPU time 19.000 s, wall time 1.902 s
+[04:36:25]   range-32mib-tls bypass: lifetime 1/12, repetition 2/3: registry total CPU time 18.990 s, wall time 1.907 s
+[04:36:27]   range-32mib-tls bypass: lifetime 1/12, repetition 3/3: registry total CPU time 19.070 s, wall time 1.909 s
+[04:36:30]   range-32mib-tls main: lifetime 2/12, repetition 1/3: registry total CPU time 19.520 s, wall time 1.954 s
+[04:36:32]   range-32mib-tls main: lifetime 2/12, repetition 2/3: registry total CPU time 19.490 s, wall time 1.951 s
+[04:36:34]   range-32mib-tls main: lifetime 2/12, repetition 3/3: registry total CPU time 19.380 s, wall time 1.941 s
+[04:36:36]   range-32mib-tls bypass: lifetime 2/12, repetition 1/3: registry total CPU time 18.960 s, wall time 1.899 s
+[04:36:38]   range-32mib-tls bypass: lifetime 2/12, repetition 2/3: registry total CPU time 18.960 s, wall time 1.902 s
+[04:36:40]   range-32mib-tls bypass: lifetime 2/12, repetition 3/3: registry total CPU time 18.980 s, wall time 1.898 s
+[04:36:43]   range-32mib-tls main: lifetime 3/12, repetition 1/3: registry total CPU time 19.140 s, wall time 1.920 s
+[04:36:45]   range-32mib-tls main: lifetime 3/12, repetition 2/3: registry total CPU time 19.140 s, wall time 1.917 s
+[04:36:47]   range-32mib-tls main: lifetime 3/12, repetition 3/3: registry total CPU time 19.220 s, wall time 1.923 s
+[04:36:49]   range-32mib-tls bypass: lifetime 3/12, repetition 1/3: registry total CPU time 18.970 s, wall time 1.898 s
+[04:36:51]   range-32mib-tls bypass: lifetime 3/12, repetition 2/3: registry total CPU time 18.990 s, wall time 1.899 s
+[04:36:53]   range-32mib-tls bypass: lifetime 3/12, repetition 3/3: registry total CPU time 18.990 s, wall time 1.899 s
+[04:36:56]   range-32mib-tls main: lifetime 4/12, repetition 1/3: registry total CPU time 19.150 s, wall time 1.922 s
+[04:36:58]   range-32mib-tls main: lifetime 4/12, repetition 2/3: registry total CPU time 19.170 s, wall time 1.921 s
+[04:36:59]   range-32mib-tls main: lifetime 4/12, repetition 3/3: registry total CPU time 19.230 s, wall time 1.927 s
+[04:37:02]   range-32mib-tls bypass: lifetime 4/12, repetition 1/3: registry total CPU time 19.200 s, wall time 1.922 s
+[04:37:04]   range-32mib-tls bypass: lifetime 4/12, repetition 2/3: registry total CPU time 19.120 s, wall time 1.913 s
+[04:37:06]   range-32mib-tls bypass: lifetime 4/12, repetition 3/3: registry total CPU time 19.040 s, wall time 1.910 s
+[04:37:08]   range-32mib-tls main: lifetime 5/12, repetition 1/3: registry total CPU time 19.150 s, wall time 1.921 s
+[04:37:10]   range-32mib-tls main: lifetime 5/12, repetition 2/3: registry total CPU time 19.120 s, wall time 1.921 s
+[04:37:12]   range-32mib-tls main: lifetime 5/12, repetition 3/3: registry total CPU time 19.100 s, wall time 1.919 s
+[04:37:15]   range-32mib-tls bypass: lifetime 5/12, repetition 1/3: registry total CPU time 19.010 s, wall time 1.904 s
+[04:37:17]   range-32mib-tls bypass: lifetime 5/12, repetition 2/3: registry total CPU time 18.970 s, wall time 1.903 s
+[04:37:19]   range-32mib-tls bypass: lifetime 5/12, repetition 3/3: registry total CPU time 19.010 s, wall time 1.903 s
+[04:37:21]   range-32mib-tls main: lifetime 6/12, repetition 1/3: registry total CPU time 19.180 s, wall time 1.921 s
+[04:37:23]   range-32mib-tls main: lifetime 6/12, repetition 2/3: registry total CPU time 19.060 s, wall time 1.914 s
+[04:37:25]   range-32mib-tls main: lifetime 6/12, repetition 3/3: registry total CPU time 19.090 s, wall time 1.917 s
+[04:37:28]   range-32mib-tls bypass: lifetime 6/12, repetition 1/3: registry total CPU time 19.190 s, wall time 1.920 s
+[04:37:30]   range-32mib-tls bypass: lifetime 6/12, repetition 2/3: registry total CPU time 19.210 s, wall time 1.923 s
+[04:37:32]   range-32mib-tls bypass: lifetime 6/12, repetition 3/3: registry total CPU time 19.210 s, wall time 1.921 s
+[04:37:34]   range-32mib-tls main: lifetime 7/12, repetition 1/3: registry total CPU time 19.070 s, wall time 1.911 s
+[04:37:36]   range-32mib-tls main: lifetime 7/12, repetition 2/3: registry total CPU time 19.070 s, wall time 1.915 s
+[04:37:38]   range-32mib-tls main: lifetime 7/12, repetition 3/3: registry total CPU time 19.080 s, wall time 1.907 s
+[04:37:41]   range-32mib-tls bypass: lifetime 7/12, repetition 1/3: registry total CPU time 19.060 s, wall time 1.908 s
+[04:37:43]   range-32mib-tls bypass: lifetime 7/12, repetition 2/3: registry total CPU time 18.990 s, wall time 1.903 s
+[04:37:44]   range-32mib-tls bypass: lifetime 7/12, repetition 3/3: registry total CPU time 18.970 s, wall time 1.899 s
+[04:37:47]   range-32mib-tls main: lifetime 8/12, repetition 1/3: registry total CPU time 19.130 s, wall time 1.915 s
+[04:37:49]   range-32mib-tls main: lifetime 8/12, repetition 2/3: registry total CPU time 19.020 s, wall time 1.907 s
+[04:37:51]   range-32mib-tls main: lifetime 8/12, repetition 3/3: registry total CPU time 19.010 s, wall time 1.906 s
+[04:37:53]   range-32mib-tls bypass: lifetime 8/12, repetition 1/3: registry total CPU time 19.310 s, wall time 1.933 s
+[04:37:55]   range-32mib-tls bypass: lifetime 8/12, repetition 2/3: registry total CPU time 19.260 s, wall time 1.928 s
+[04:37:57]   range-32mib-tls bypass: lifetime 8/12, repetition 3/3: registry total CPU time 19.290 s, wall time 1.929 s
+[04:38:00]   range-32mib-tls main: lifetime 9/12, repetition 1/3: registry total CPU time 19.210 s, wall time 1.924 s
+[04:38:02]   range-32mib-tls main: lifetime 9/12, repetition 2/3: registry total CPU time 19.210 s, wall time 1.926 s
+[04:38:04]   range-32mib-tls main: lifetime 9/12, repetition 3/3: registry total CPU time 19.240 s, wall time 1.929 s
+[04:38:06]   range-32mib-tls bypass: lifetime 9/12, repetition 1/3: registry total CPU time 19.190 s, wall time 1.920 s
+[04:38:08]   range-32mib-tls bypass: lifetime 9/12, repetition 2/3: registry total CPU time 19.220 s, wall time 1.920 s
+[04:38:10]   range-32mib-tls bypass: lifetime 9/12, repetition 3/3: registry total CPU time 19.060 s, wall time 1.905 s
+[04:38:13]   range-32mib-tls main: lifetime 10/12, repetition 1/3: registry total CPU time 19.230 s, wall time 1.925 s
+[04:38:15]   range-32mib-tls main: lifetime 10/12, repetition 2/3: registry total CPU time 19.170 s, wall time 1.920 s
+[04:38:17]   range-32mib-tls main: lifetime 10/12, repetition 3/3: registry total CPU time 19.220 s, wall time 1.922 s
+[04:38:19]   range-32mib-tls bypass: lifetime 10/12, repetition 1/3: registry total CPU time 19.010 s, wall time 1.905 s
+[04:38:21]   range-32mib-tls bypass: lifetime 10/12, repetition 2/3: registry total CPU time 19.010 s, wall time 1.905 s
+[04:38:23]   range-32mib-tls bypass: lifetime 10/12, repetition 3/3: registry total CPU time 19.040 s, wall time 1.905 s
+[04:38:26]   range-32mib-tls main: lifetime 11/12, repetition 1/3: registry total CPU time 19.020 s, wall time 1.908 s
+[04:38:28]   range-32mib-tls main: lifetime 11/12, repetition 2/3: registry total CPU time 18.990 s, wall time 1.909 s
+[04:38:29]   range-32mib-tls main: lifetime 11/12, repetition 3/3: registry total CPU time 18.970 s, wall time 1.900 s
+[04:38:32]   range-32mib-tls bypass: lifetime 11/12, repetition 1/3: registry total CPU time 18.990 s, wall time 1.905 s
+[04:38:34]   range-32mib-tls bypass: lifetime 11/12, repetition 2/3: registry total CPU time 18.970 s, wall time 1.899 s
+[04:38:36]   range-32mib-tls bypass: lifetime 11/12, repetition 3/3: registry total CPU time 18.920 s, wall time 1.899 s
+[04:38:38]   range-32mib-tls main: lifetime 12/12, repetition 1/3: registry total CPU time 19.120 s, wall time 1.918 s
+[04:38:40]   range-32mib-tls main: lifetime 12/12, repetition 2/3: registry total CPU time 19.100 s, wall time 1.912 s
+[04:38:42]   range-32mib-tls main: lifetime 12/12, repetition 3/3: registry total CPU time 19.080 s, wall time 1.909 s
+[04:38:45]   range-32mib-tls bypass: lifetime 12/12, repetition 1/3: registry total CPU time 18.950 s, wall time 1.900 s
+[04:38:47]   range-32mib-tls bypass: lifetime 12/12, repetition 2/3: registry total CPU time 19.070 s, wall time 1.908 s
+[04:38:49]   range-32mib-tls bypass: lifetime 12/12, repetition 3/3: registry total CPU time 19.020 s, wall time 1.905 s
+[04:38:49] finished range-32mib-tls--main+bypass in 156 s; placement and network namespace verified for every repetition
+# fileReader bypass: registry CPU time and wall time against main
+
+Measured 2026-11-12 with `repro/measure-filereader-bypass.py` (command: `--base 910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9 --bypass 0eb9d5768544e74a8410d282d83146f326148de1 --buffer-caps-kib  --cases whole-4mib,whole-32mib,range-1mib,range-32mib --transports tls --lifetimes 12 --repetitions 3 --out /path/to/sendfile-perf-repro/distribution/repro/pr5052-final-trees-20261112T042246Z/tls-lifetimes-5081-vs-5052 --report-name script-report.arm-main-is-5081.arm-bypass-is-5052.md`), which drives `repro/run-repro.sh`. Every arm and case: 12 process lifetime(s) of 3 repetitions. All ± values are sample standard deviations over repetitions.
+
+## Arms
+
+- main: upstream main, commit 910dd4f2, tree `cf3fa2a7`.
+- bypass: bypass branch, commit 0eb9d576, tree `f7cc5450`.
+
+## Method and environment
+
+- Placement: registry and load client pinned to disjoint CPU sets of NUMA node 0 with `numactl --physcpubind --membind` (`NUMA_PIN=same-socket`): registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71.
+- Network: registry and client run in a private network namespace whose loopback has no netfilter rules (`LOOPBACK_NET=isolated`); HTTP/1.1 on loopback for both transports.
+- Verified, not assumed: for each of the 288 repetitions in 96 process lifetimes the load client recorded the CPU affinity of every thread, the memory policy of every mapping and the network namespace of registry and client; all match the requested placement and the namespace the harness verified (only `lo`, empty nftables ruleset). The script stops otherwise.
+- Foreign load: per repetition, the busy time of the pinned CPUs (user, nice, system, irq, softirq from `/proc/stat`) minus registry and client CPU time. A repetition is flagged when that remainder exceeds 0.3 s and 20% of the busy time. Flagged: 0 of 288 repetitions. Largest remainder: 3.00 s, 7% of the busy time of that repetition. The CPUs were also checked to be idle before every harness invocation.
+- CPU time: `/proc/<pid>/stat` of the registry process, resolution 0.01 s per repetition. Access logging disabled, `OTEL_TRACES_EXPORTER=none`.
+- Host: NVIDIA DGX GB200 Compute Tray, Neoverse-V2, 2 sockets with 72 cores each, aarch64, Linux 6.14.0-1015-nvidia-64k, page size 64 KiB, Ubuntu 24.04.3 LTS.
+- Build: go1.26.10 linux/arm64, `go build -mod=vendor -trimpath ./cmd/registry`; main `910dd4f2` (tree `cf3fa2a7`), bypass `0eb9d576` (tree `f7cc5450`). Source and Go version of every binary verified.
+- Registry storage: ext4 on `nvme0n1p3` (SAMSUNG MZ1L21T9HCLS-00A07, not a rotating disk), readahead 256 KiB.
+
+## Whole-blob GETs, warm page cache
+
+One repetition is the stated number of GET requests for one whole blob, 10 concurrent. Registry total CPU time per request is the registry total CPU time of a repetition divided by its requests. "Separated" says whether every process lifetime mean of one arm lies below every process lifetime mean of the other.
+
+TLS:
+
+| Blob size | Requests per repetition | main: registry total CPU time per request (mean ± sample SD, µs) | n | bypass: registry total CPU time per request (mean ± sample SD, µs) | n | Change of the mean, main to bypass | Separated |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 4 MiB | 1000 | 2407 ± 20 | 36 | 2346 ± 37 | 36 | -2.6% | no |
+| 32 MiB | 500 | 17693 ± 141 | 36 | 17487 ± 92 | 36 | -1.2% | no |
+
+<details>
+<summary>Whole-blob GETs, warm page cache: user and kernel CPU time, process lifetime means</summary>
+
+Seconds per repetition.
+
+| Transport | Case | Arm | n | Registry total CPU time (mean ± sample SD, s) | Registry user CPU time (mean ± sample SD, s) | Registry kernel CPU time (mean ± sample SD, s) | Process lifetime means of registry total CPU time (s) |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| TLS | 4 MiB | main | 36 | 2.407 ± 0.020 | 1.131 ± 0.025 | 1.276 ± 0.028 | 2.397, 2.460, 2.410, 2.403, 2.407, 2.393, 2.410, 2.397, 2.390, 2.403, 2.417, 2.400 |
+| TLS | 4 MiB | bypass | 36 | 2.346 ± 0.037 | 1.077 ± 0.025 | 1.269 ± 0.044 | 2.323, 2.330, 2.423, 2.340, 2.340, 2.327, 2.340, 2.317, 2.333, 2.340, 2.313, 2.423 |
+| TLS | 32 MiB | main | 36 | 8.847 ± 0.070 | 3.543 ± 0.068 | 5.30 ± 0.10 | 8.847, 8.783, 8.780, 8.823, 8.870, 9.003, 8.903, 8.777, 8.820, 8.930, 8.787, 8.837 |
+| TLS | 32 MiB | bypass | 36 | 8.743 ± 0.046 | 3.447 ± 0.064 | 5.296 ± 0.081 | 8.783, 8.767, 8.697, 8.797, 8.743, 8.743, 8.767, 8.757, 8.720, 8.797, 8.687, 8.663 |
+
+</details>
+
+## Range GETs, warm page cache
+
+One repetition is 1000 GET requests, 10 concurrent, each for one range of a 512 MiB blob at a pseudo-random multiple of the range size. "Separated" says whether every process lifetime mean of one arm lies below every process lifetime mean of the other.
+
+TLS:
+
+| Range | Requests per repetition | main: registry total CPU time per repetition (mean ± sample SD, s) | n | bypass: registry total CPU time per repetition (mean ± sample SD, s) | n | Change of the mean, main to bypass | Separated |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 32 MiB | 1000 | 19.16 ± 0.12 | 36 | 19.06 ± 0.11 | 36 | -0.5% | no |
+| 1 MiB | 1000 | 0.947 ± 0.011 | 36 | 0.8861 ± 0.0093 | 36 | -6.4% | yes |
+
+<details>
+<summary>Range GETs, warm page cache: user and kernel CPU time, process lifetime means</summary>
+
+Seconds per repetition.
+
+| Transport | Case | Arm | n | Registry total CPU time (mean ± sample SD, s) | Registry user CPU time (mean ± sample SD, s) | Registry kernel CPU time (mean ± sample SD, s) | Process lifetime means of registry total CPU time (s) |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| TLS | 32 MiB range | main | 36 | 19.16 ± 0.12 | 7.114 ± 0.062 | 12.04 ± 0.14 | 19.187, 19.463, 19.167, 19.183, 19.123, 19.110, 19.073, 19.053, 19.220, 19.207, 18.993, 19.100 |
+| TLS | 32 MiB range | bypass | 36 | 19.06 ± 0.11 | 6.976 ± 0.061 | 12.08 ± 0.12 | 19.020, 18.967, 18.983, 19.120, 18.997, 19.203, 19.007, 19.287, 19.157, 19.020, 18.960, 19.013 |
+| TLS | 1 MiB range | main | 36 | 0.947 ± 0.011 | 0.501 ± 0.019 | 0.446 ± 0.018 | 0.943, 0.943, 0.970, 0.947, 0.943, 0.943, 0.940, 0.947, 0.947, 0.947, 0.950, 0.943 |
+| TLS | 1 MiB range | bypass | 36 | 0.8861 ± 0.0093 | 0.458 ± 0.018 | 0.429 ± 0.017 | 0.883, 0.883, 0.887, 0.887, 0.883, 0.887, 0.887, 0.883, 0.903, 0.887, 0.883, 0.880 |
+
+</details>
+
+## Distributions
+
+Checked for every case and arm, registry total CPU time and wall time: the sorted values are split at their largest gap; a bimodal candidate is reported when both sides hold at least three values and the gap is at least four pooled within-side sample SDs and 0.03 s.
+
+- whole-4mib-tls, bypass, registry total CPU time: two groups, 30 values with mean 2.330 s and 6 values with mean 2.423 s, gap 0.060 s; the groups coincide with process lifetimes.
+
+## Run
+
+4 harness invocations, 302 s from the first to the last. Per-repetition values: `data.json`; raw harness result files: `sessions/`; harness logs: `logs/`.
+
+[04:38:49] report: /path/to/sendfile-perf-repro/distribution/repro/pr5052-final-trees-20261112T042246Z/tls-lifetimes-5081-vs-5052/script-report.arm-main-is-5081.arm-bypass-is-5052.md
+2026-11-12T04:38:49Z done
+exit=0

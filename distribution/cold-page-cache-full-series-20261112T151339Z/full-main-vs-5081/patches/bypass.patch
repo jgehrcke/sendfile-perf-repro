@@ -1,0 +1,231 @@
+diff --git a/registry/handlers/api_test.go b/registry/handlers/api_test.go
+index 46b63d6e..c62a0222 100644
+--- a/registry/handlers/api_test.go
++++ b/registry/handlers/api_test.go
+@@ -13,6 +13,7 @@ import (
+ 	"net/url"
+ 	"os"
+ 	"path"
++	"path/filepath"
+ 	"reflect"
+ 	"regexp"
+ 	"slices"
+@@ -789,6 +790,40 @@ func TestBlobAPIFilesystem(t *testing.T) {
+ 	testBlobAPI(t, env, makeBlobArgs(t))
+ }
+ 
++// The registry answers a GET with BLOB_UNKNOWN when the blob file is missing
++// on disk and the blob descriptor cache still has its descriptor.
++func TestBlobAPIFilesystemMissingFile(t *testing.T) {
++	root := t.TempDir()
++	config := configuration.Configuration{
++		Storage: configuration.Storage{
++			"filesystem": configuration.Parameters{"rootdirectory": root},
++			"cache":      configuration.Parameters{"blobdescriptor": "inmemory"},
++			"maintenance": configuration.Parameters{"uploadpurging": map[any]any{
++				"enabled": false,
++			}},
++		},
++	}
++	config.HTTP.Headers = headerConfig
++	env := newTestEnvWithConfig(t, &config)
++	defer env.Shutdown()
++
++	args := makeBlobArgs(t)
++	uploadURLBase, _ := startPushLayer(t, env, args.imageName)
++	blobURL := pushLayer(t, env.builder, args.imageName, args.layerDigest, uploadURLBase, args.layerFile)
++
++	// Remove the blob file; the cached descriptor stays.
++	if err := os.RemoveAll(filepath.Join(root, "docker/registry/v2/blobs")); err != nil {
++		t.Fatal(err)
++	}
++	resp, err := http.Get(blobURL)
++	if err != nil {
++		t.Fatal(err)
++	}
++	defer resp.Body.Close()
++	checkResponse(t, "fetching a blob whose file is missing", resp, http.StatusNotFound)
++	checkBodyHasErrorCodes(t, "fetching a blob whose file is missing", resp, errcode.ErrorCodeBlobUnknown)
++}
++
+ func TestBlobDelete(t *testing.T) {
+ 	deleteEnabled := true
+ 	env := newTestEnv(t, deleteEnabled)
+diff --git a/registry/handlers/blob.go b/registry/handlers/blob.go
+index fa96d40a..ce46ec03 100644
+--- a/registry/handlers/blob.go
++++ b/registry/handlers/blob.go
+@@ -67,7 +67,11 @@ func (bh *blobHandler) GetBlob(w http.ResponseWriter, r *http.Request) {
+ 
+ 	if err := blobs.ServeBlob(bh, w, r, desc.Digest); err != nil {
+ 		dcontext.GetLogger(bh).Debugf("unexpected error getting blob HTTP handler: %v", err)
+-		bh.Errors = append(bh.Errors, toErrcodeErrors(err)...)
++		if err == distribution.ErrBlobUnknown {
++			bh.Errors = append(bh.Errors, errcode.ErrorCodeBlobUnknown.WithDetail(bh.Digest))
++		} else {
++			bh.Errors = append(bh.Errors, toErrcodeErrors(err)...)
++		}
+ 		return
+ 	}
+ }
+diff --git a/registry/storage/blobserver.go b/registry/storage/blobserver.go
+index 6beef7e3..576e3e14 100644
+--- a/registry/storage/blobserver.go
++++ b/registry/storage/blobserver.go
+@@ -3,7 +3,9 @@ package storage
+ import (
+ 	"context"
+ 	"fmt"
++	"io"
+ 	"net/http"
++	"os"
+ 	"time"
+ 
+ 	"github.com/distribution/distribution/v3"
+@@ -14,6 +16,9 @@ import (
+ // TODO(stevvooe): This should configurable in the future.
+ const blobCacheControlMaxAge = 365 * 24 * time.Hour
+ 
++// filesystemDriverName is the name that the filesystem storage driver reports.
++const filesystemDriverName = "filesystem"
++
+ // blobServer simply serves blobs from a driver instance using a path function
+ // to identify paths and a descriptor service to fill in metadata.
+ type blobServer struct {
+@@ -53,6 +58,30 @@ func (bs *blobServer) ServeBlob(ctx context.Context, w http.ResponseWriter, r *h
+ 	}
+ 	defer br.Close()
+ 
++	var content io.ReadSeeker = br
++	// On the filesystem driver, serve a GET from the blob file itself.
++	// fileReader would allocate a buffer of up to fileReaderBufferSize per
++	// GET and report desc.Size as the length, which can come from a stale
++	// cache entry. Opening the file here reports a missing or unreadable
++	// file before any header is written. For HEAD, ServeBlob keeps
++	// fileReader, which then never opens the file. The name check spares
++	// other drivers a second Reader call.
++	if r.Method == http.MethodGet && bs.driver.Name() == filesystemDriverName {
++		rc, err := bs.driver.Reader(ctx, path, 0)
++		if err != nil {
++			if _, ok := err.(driver.PathNotFoundError); ok {
++				// The blob statter returns the same error when it finds the file missing.
++				return distribution.ErrBlobUnknown
++			}
++			return err
++		}
++		defer rc.Close()
++		// A storage middleware may wrap the reader; ServeBlob then keeps fileReader.
++		if f, ok := rc.(*os.File); ok {
++			content = f
++		}
++	}
++
+ 	w.Header().Set("ETag", fmt.Sprintf(`"%s"`, desc.Digest)) // If-None-Match handled by ServeContent
+ 	w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%.f", blobCacheControlMaxAge.Seconds()))
+ 
+@@ -70,6 +99,6 @@ func (bs *blobServer) ServeBlob(ctx context.Context, w http.ResponseWriter, r *h
+ 		w.Header().Set("Content-Length", fmt.Sprint(desc.Size))
+ 	}
+ 
+-	http.ServeContent(w, r, desc.Digest.String(), time.Time{}, br)
++	http.ServeContent(w, r, desc.Digest.String(), time.Time{}, content)
+ 	return nil
+ }
+diff --git a/registry/storage/blobserver_test.go b/registry/storage/blobserver_test.go
+new file mode 100644
+index 00000000..e4beb6ee
+--- /dev/null
++++ b/registry/storage/blobserver_test.go
+@@ -0,0 +1,92 @@
++package storage
++
++import (
++	"context"
++	"io"
++	"net/http"
++	"net/http/httptest"
++	"strconv"
++	"testing"
++
++	"github.com/distribution/distribution/v3/registry/storage/driver"
++	"github.com/distribution/distribution/v3/registry/storage/driver/filesystem"
++	"github.com/distribution/distribution/v3/registry/storage/driver/inmemory"
++	"github.com/opencontainers/go-digest"
++	v1 "github.com/opencontainers/image-spec/specs-go/v1"
++)
++
++type fixedBlobStatter struct {
++	desc v1.Descriptor
++}
++
++func (s fixedBlobStatter) Stat(context.Context, digest.Digest) (v1.Descriptor, error) {
++	return s.desc, nil
++}
++
++// On the filesystem driver, ServeBlob answers a GET with the blob file as it
++// is on disk, also when its size differs from the size in the blob descriptor.
++func TestBlobServerFilesystemFileSize(t *testing.T) {
++	desc := v1.Descriptor{Digest: digest.FromString("0123456789"), Size: 10, MediaType: "application/octet-stream"}
++	for _, tc := range []struct{ name, fileContent string }{
++		{name: "file-smaller-than-descriptor", fileContent: "01234"},
++		{name: "file-larger-than-descriptor", fileContent: "0123456789ab"},
++	} {
++		t.Run(tc.name, func(t *testing.T) {
++			fs := filesystem.New(filesystem.DriverParameters{RootDirectory: t.TempDir(), MaxThreads: 25})
++			if err := fs.PutContent(context.Background(), "/blob", []byte(tc.fileContent)); err != nil {
++				t.Fatal(err)
++			}
++			bs := &blobServer{
++				driver:  fs,
++				statter: fixedBlobStatter{desc},
++				pathFn:  func(digest.Digest) (string, error) { return "/blob", nil },
++			}
++			w := httptest.NewRecorder()
++			if err := bs.ServeBlob(context.Background(), w, httptest.NewRequest(http.MethodGet, "/", nil), desc.Digest); err != nil {
++				t.Fatal(err)
++			}
++			if got := w.Body.String(); got != tc.fileContent {
++				t.Errorf("body = %q, want %q", got, tc.fileContent)
++			}
++			if got, want := w.Header().Get("Content-Length"), strconv.Itoa(len(tc.fileContent)); got != want {
++				t.Errorf("Content-Length = %q, want %q", got, want)
++			}
++		})
++	}
++}
++
++type readerCallCounter struct {
++	driver.StorageDriver
++	calls int
++}
++
++func (d *readerCallCounter) Reader(ctx context.Context, path string, offset int64) (io.ReadCloser, error) {
++	d.calls++
++	return d.StorageDriver.Reader(ctx, path, offset)
++}
++
++// For a driver other than the filesystem driver, ServeBlob does not call
++// Reader itself: the only call per GET is fileReader's.
++func TestBlobServerOtherDriverReaderCalls(t *testing.T) {
++	const content = "0123456789"
++	counter := &readerCallCounter{StorageDriver: inmemory.New()}
++	if err := counter.PutContent(context.Background(), "/blob", []byte(content)); err != nil {
++		t.Fatal(err)
++	}
++	desc := v1.Descriptor{Digest: digest.FromString(content), Size: int64(len(content)), MediaType: "application/octet-stream"}
++	bs := &blobServer{
++		driver:  counter,
++		statter: fixedBlobStatter{desc},
++		pathFn:  func(digest.Digest) (string, error) { return "/blob", nil },
++	}
++	w := httptest.NewRecorder()
++	if err := bs.ServeBlob(context.Background(), w, httptest.NewRequest(http.MethodGet, "/", nil), desc.Digest); err != nil {
++		t.Fatal(err)
++	}
++	if got := w.Body.String(); got != content {
++		t.Errorf("body = %q, want %q", got, content)
++	}
++	if counter.calls != 1 {
++		t.Errorf("Reader calls = %d, want 1", counter.calls)
++	}
++}

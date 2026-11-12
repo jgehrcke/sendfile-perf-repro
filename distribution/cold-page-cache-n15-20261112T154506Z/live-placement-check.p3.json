@@ -1,0 +1,124 @@
+{
+ "host_network_namespace": "net:[4026531840]",
+ "sampling_passes": 1511,
+ "interval_s": 0.5,
+ "checker_cpus_allowed": "72-143",
+ "work_directory": "/path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/",
+ "processes": [
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 501,
+   "pids": [
+    1369931,
+    1370356,
+    1375513,
+    1378644,
+    1386258,
+    1392064,
+    1392546,
+    1394435,
+    1395526,
+    1396585
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 1477,
+   "pids": [
+    1370566,
+    1371210,
+    1375753,
+    1377002,
+    1378894,
+    1383117,
+    1386470,
+    1387585,
+    1392795,
+    1394133,
+    1394680,
+    1395246,
+    1395736,
+    1396280,
+    1396793,
+    1397287
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 985,
+   "pids": [
+    1370853,
+    1376748,
+    1382894,
+    1387346,
+    1393890,
+    1395028,
+    1396036,
+    1397041
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "choose-port",
+   "cpus_allowed_of_threads": [
+    "0-143"
+   ],
+   "numa_policies": [
+    "default"
+   ],
+   "network_namespace": "net:[4026531840]",
+   "samples": 1,
+   "pids": [
+    1390524
+   ]
+  }
+ ],
+ "network_namespaces": {
+  "net:[4026542154]": {
+   "first_seen_pid": 1369931,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  },
+  "net:[4026531840]": {
+   "first_seen_pid": 1390524,
+   "interfaces": [],
+   "ip_link_exit": 1,
+   "ip_link_stderr": "nsenter: reassociate to namespace 'ns/user' failed: Invalid argument",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 1,
+   "nft_list_ruleset_stderr": "nsenter: reassociate to namespace 'ns/user' failed: Invalid argument",
+   "is_host_namespace": true
+  }
+ }
+}

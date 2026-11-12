@@ -1,0 +1,162 @@
+2026-11-12T15:46:17Z start p1-http-1gib 5081-vs-5052
+[15:46:17] 1 harness invocations; n = 5 x 3 = 15 repetitions per arm and case; results in /path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-5081-vs-5052
+[15:46:17] invocation 1 of 1
+[15:46:18] starting cold-c1-http--main+bypass: 5 lifetime(s) x 3 repetition(s), 8 requests per repetition, concurrency 1
+[15:46:23]   cold-c1-http main: lifetime 1/5, repetition 1/3: registry total CPU time 2.830 s, wall time 3.389 s
+[15:46:26]   cold-c1-http main: lifetime 1/5, repetition 2/3: registry total CPU time 2.830 s, wall time 3.377 s
+[15:46:30]   cold-c1-http main: lifetime 1/5, repetition 3/3: registry total CPU time 2.820 s, wall time 3.376 s
+[15:46:32]   cold-c1-http bypass: lifetime 1/5, repetition 1/3: registry total CPU time 0.800 s, wall time 1.577 s
+[15:47:06]   cold-c1-http bypass: lifetime 1/5, repetition 2/3: registry total CPU time 0.780 s, wall time 1.723 s
+[15:47:25]   cold-c1-http bypass: lifetime 1/5, repetition 3/3: registry total CPU time 0.790 s, wall time 1.887 s
+[15:48:18]   cold-c1-http main: lifetime 2/5, repetition 1/3: registry total CPU time 2.900 s, wall time 3.428 s
+[15:48:21]   cold-c1-http main: lifetime 2/5, repetition 2/3: registry total CPU time 2.880 s, wall time 3.402 s
+[15:48:25]   cold-c1-http main: lifetime 2/5, repetition 3/3: registry total CPU time 2.890 s, wall time 3.432 s
+[15:48:27]   cold-c1-http bypass: lifetime 2/5, repetition 1/3: registry total CPU time 0.780 s, wall time 1.577 s
+[15:48:56]   cold-c1-http bypass: lifetime 2/5, repetition 2/3: registry total CPU time 0.780 s, wall time 1.649 s
+[15:49:49]   cold-c1-http bypass: lifetime 2/5, repetition 3/3: registry total CPU time 0.760 s, wall time 1.886 s
+[15:50:25]   cold-c1-http main: lifetime 3/5, repetition 1/3: registry total CPU time 2.890 s, wall time 3.415 s
+[15:50:29]   cold-c1-http main: lifetime 3/5, repetition 2/3: registry total CPU time 2.850 s, wall time 3.392 s
+[15:50:32]   cold-c1-http main: lifetime 3/5, repetition 3/3: registry total CPU time 2.840 s, wall time 3.389 s
+[15:50:35]   cold-c1-http bypass: lifetime 3/5, repetition 1/3: registry total CPU time 0.790 s, wall time 1.810 s
+[15:50:42]   cold-c1-http bypass: lifetime 3/5, repetition 2/3: registry total CPU time 0.760 s, wall time 1.785 s
+[15:51:10]   cold-c1-http bypass: lifetime 3/5, repetition 3/3: registry total CPU time 0.770 s, wall time 1.717 s
+[15:51:27]   cold-c1-http main: lifetime 4/5, repetition 1/3: registry total CPU time 2.880 s, wall time 3.407 s
+[15:51:30]   cold-c1-http main: lifetime 4/5, repetition 2/3: registry total CPU time 2.880 s, wall time 3.385 s
+[15:51:34]   cold-c1-http main: lifetime 4/5, repetition 3/3: registry total CPU time 2.900 s, wall time 3.407 s
+[15:51:36]   cold-c1-http bypass: lifetime 4/5, repetition 1/3: registry total CPU time 0.790 s, wall time 1.574 s
+[15:52:06]   cold-c1-http bypass: lifetime 4/5, repetition 2/3: registry total CPU time 0.790 s, wall time 1.740 s
+[15:52:27]   cold-c1-http bypass: lifetime 4/5, repetition 3/3: registry total CPU time 0.780 s, wall time 1.782 s
+[15:52:42]   cold-c1-http main: lifetime 5/5, repetition 1/3: registry total CPU time 2.930 s, wall time 3.440 s
+[15:52:45]   cold-c1-http main: lifetime 5/5, repetition 2/3: registry total CPU time 2.910 s, wall time 3.421 s
+[15:52:49]   cold-c1-http main: lifetime 5/5, repetition 3/3: registry total CPU time 2.890 s, wall time 3.423 s
+[15:52:51]   cold-c1-http bypass: lifetime 5/5, repetition 1/3: registry total CPU time 0.800 s, wall time 1.576 s
+[15:53:30]   cold-c1-http bypass: lifetime 5/5, repetition 2/3: registry total CPU time 0.780 s, wall time 1.936 s
+[15:53:50]   cold-c1-http bypass: lifetime 5/5, repetition 3/3: registry total CPU time 0.760 s, wall time 1.574 s
+[15:53:51] finished cold-c1-http--main+bypass in 453 s; placement and network namespace verified for every repetition
+# fileReader bypass: registry CPU time and wall time against main
+
+Measured 2026-11-12 with `repro/measure-filereader-bypass.py` (command: `--lifetimes 5 --repetitions 3 --base 910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9 --bypass 0eb9d5768544e74a8410d282d83146f326148de1 --buffer-caps-kib  --cases cold-c1 --transports http --out /path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-5081-vs-5052 --report-name script-report.arm-main-is-5081.arm-bypass-is-5052.md`), which drives `repro/run-repro.sh`. Every arm and case: 5 process lifetime(s) of 3 repetitions. All ± values are sample standard deviations over repetitions.
+
+## Arms
+
+- main: upstream main, commit 910dd4f2, tree `cf3fa2a7`.
+- bypass: bypass branch, commit 0eb9d576, tree `f7cc5450`.
+
+## Method and environment
+
+- Placement: registry and load client pinned to disjoint CPU sets of NUMA node 0 with `numactl --physcpubind --membind` (`NUMA_PIN=same-socket`): registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71.
+- Network: registry and client run in a private network namespace whose loopback has no netfilter rules (`LOOPBACK_NET=isolated`); HTTP/1.1 on loopback for both transports.
+- Verified, not assumed: for each of the 30 repetitions in 10 process lifetimes the load client recorded the CPU affinity of every thread, the memory policy of every mapping and the network namespace of registry and client; all match the requested placement and the namespace the harness verified (only `lo`, empty nftables ruleset). The script stops otherwise.
+- Foreign load: per repetition, the busy time of the pinned CPUs (user, nice, system, irq, softirq from `/proc/stat`) minus registry and client CPU time. A repetition is flagged when that remainder exceeds 0.3 s and 20% of the busy time. Flagged: 2 of 30 repetitions (sessions/cold-c1-http--main+bypass/http/patched-default-n8-l1-r3.json, sessions/cold-c1-http--main+bypass/http/patched-default-n8-l4-r1.json; they are included in the tables). Largest remainder: 1.59 s, 42% of the busy time of that repetition. The CPUs were also checked to be idle before every harness invocation.
+- CPU time: `/proc/<pid>/stat` of the registry process, resolution 0.01 s per repetition. Access logging disabled, `OTEL_TRACES_EXPORTER=none`.
+- Host: NVIDIA DGX GB200 Compute Tray, Neoverse-V2, 2 sockets with 72 cores each, aarch64, Linux 6.14.0-1015-nvidia-64k, page size 64 KiB, Ubuntu 24.04.3 LTS.
+- Build: go1.26.10 linux/arm64, `go build -mod=vendor -trimpath ./cmd/registry`; main `910dd4f2` (tree `cf3fa2a7`), bypass `0eb9d576` (tree `f7cc5450`). Source and Go version of every binary verified.
+- Registry storage: ext4 on `nvme0n1p3` (SAMSUNG MZ1L21T9HCLS-00A07, not a rotating disk), readahead 256 KiB.
+
+## Whole-blob GETs, cold page cache
+
+One repetition is 8 GET requests, one for each of 8 distinct blobs of 1 GiB (8 GiB), one at a time or all at once. Before every repetition each blob file is dropped from the page cache with `posix_fadvise(POSIX_FADV_DONTNEED)`; `mincore()` showed no page of the files in the page cache before and every page after, in every repetition.
+
+Storage: ext4 on SAMSUNG MZ1L21T9HCLS-00A07 (NVMe solid-state drive), readahead 256 KiB. A result on this device says nothing about rotating disks or network filesystems.
+
+| Transport | Concurrency | Metric | main (mean ± sample SD, s) | n | bypass (mean ± sample SD, s) | n | Change of the mean, main to bypass | Separated |
+| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Plain HTTP | 1 | Wall time per repetition | 3.406 ± 0.021 | 15 | 1.72 ± 0.13 | 15 | -49.5% | yes |
+| Plain HTTP | 1 | Registry total CPU time per repetition | 2.875 ± 0.033 | 15 | 0.781 ± 0.013 | 15 | -72.8% | yes |
+| Plain HTTP | 1 | Registry user CPU time per repetition | 0.163 ± 0.018 | 15 | 0.0060 ± 0.0051 | 15 | -96.3% | yes |
+| Plain HTTP | 1 | Registry kernel CPU time per repetition | 2.712 ± 0.042 | 15 | 0.775 ± 0.013 | 15 | -71.4% | yes |
+
+## Distributions
+
+Checked for every case and arm, registry total CPU time and wall time: the sorted values are split at their largest gap; a bimodal candidate is reported when both sides hold at least three values and the gap is at least four pooled within-side sample SDs and 0.03 s.
+
+No bimodal candidate.
+
+## Run
+
+1 harness invocations, 453 s from the first to the last. Per-repetition values: `data.json`; raw harness result files: `sessions/`; harness logs: `logs/`.
+
+[15:53:51] report: /path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-5081-vs-5052/script-report.arm-main-is-5081.arm-bypass-is-5052.md
+2026-11-12T15:53:51Z start p1-http-1gib main-vs-5081
+[15:53:51] 1 harness invocations; n = 5 x 3 = 15 repetitions per arm and case; results in /path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-main-vs-5081
+[15:53:51] invocation 1 of 1
+[15:53:51] starting cold-c1-http--main+bypass: 5 lifetime(s) x 3 repetition(s), 8 requests per repetition, concurrency 1
+[15:53:52]   building unpatched registry
+[15:54:25]   cold-c1-http main: lifetime 1/5, repetition 1/3: registry total CPU time 2.810 s, wall time 3.483 s
+[15:54:29]   cold-c1-http main: lifetime 1/5, repetition 2/3: registry total CPU time 2.770 s, wall time 3.332 s
+[15:54:32]   cold-c1-http main: lifetime 1/5, repetition 3/3: registry total CPU time 2.780 s, wall time 3.333 s
+[15:54:36]   cold-c1-http bypass: lifetime 1/5, repetition 1/3: registry total CPU time 2.820 s, wall time 3.387 s
+[15:54:40]   cold-c1-http bypass: lifetime 1/5, repetition 2/3: registry total CPU time 2.820 s, wall time 3.380 s
+[15:54:43]   cold-c1-http bypass: lifetime 1/5, repetition 3/3: registry total CPU time 2.820 s, wall time 3.374 s
+[15:54:47]   cold-c1-http main: lifetime 2/5, repetition 1/3: registry total CPU time 2.770 s, wall time 3.428 s
+[15:54:51]   cold-c1-http main: lifetime 2/5, repetition 2/3: registry total CPU time 2.780 s, wall time 3.484 s
+[15:54:54]   cold-c1-http main: lifetime 2/5, repetition 3/3: registry total CPU time 2.750 s, wall time 3.318 s
+[15:54:58]   cold-c1-http bypass: lifetime 2/5, repetition 1/3: registry total CPU time 2.820 s, wall time 3.384 s
+[15:55:02]   cold-c1-http bypass: lifetime 2/5, repetition 2/3: registry total CPU time 2.810 s, wall time 3.375 s
+[15:55:05]   cold-c1-http bypass: lifetime 2/5, repetition 3/3: registry total CPU time 2.800 s, wall time 3.368 s
+[15:55:09]   cold-c1-http main: lifetime 3/5, repetition 1/3: registry total CPU time 2.770 s, wall time 3.413 s
+[15:55:13]   cold-c1-http main: lifetime 3/5, repetition 2/3: registry total CPU time 2.710 s, wall time 3.282 s
+[15:55:16]   cold-c1-http main: lifetime 3/5, repetition 3/3: registry total CPU time 2.740 s, wall time 3.312 s
+[15:55:20]   cold-c1-http bypass: lifetime 3/5, repetition 1/3: registry total CPU time 2.820 s, wall time 3.372 s
+[15:55:24]   cold-c1-http bypass: lifetime 3/5, repetition 2/3: registry total CPU time 2.820 s, wall time 3.388 s
+[15:55:27]   cold-c1-http bypass: lifetime 3/5, repetition 3/3: registry total CPU time 2.800 s, wall time 3.375 s
+[15:55:31]   cold-c1-http main: lifetime 4/5, repetition 1/3: registry total CPU time 2.720 s, wall time 3.387 s
+[15:55:34]   cold-c1-http main: lifetime 4/5, repetition 2/3: registry total CPU time 2.680 s, wall time 3.258 s
+[15:55:38]   cold-c1-http main: lifetime 4/5, repetition 3/3: registry total CPU time 2.680 s, wall time 3.251 s
+[15:55:42]   cold-c1-http bypass: lifetime 4/5, repetition 1/3: registry total CPU time 2.800 s, wall time 3.366 s
+[15:55:45]   cold-c1-http bypass: lifetime 4/5, repetition 2/3: registry total CPU time 2.810 s, wall time 3.372 s
+[15:55:49]   cold-c1-http bypass: lifetime 4/5, repetition 3/3: registry total CPU time 2.820 s, wall time 3.390 s
+[15:55:53]   cold-c1-http main: lifetime 5/5, repetition 1/3: registry total CPU time 2.790 s, wall time 3.360 s
+[15:55:56]   cold-c1-http main: lifetime 5/5, repetition 2/3: registry total CPU time 2.780 s, wall time 3.336 s
+[15:56:00]   cold-c1-http main: lifetime 5/5, repetition 3/3: registry total CPU time 2.720 s, wall time 3.305 s
+[15:56:04]   cold-c1-http bypass: lifetime 5/5, repetition 1/3: registry total CPU time 2.830 s, wall time 3.385 s
+[15:56:07]   cold-c1-http bypass: lifetime 5/5, repetition 2/3: registry total CPU time 2.880 s, wall time 3.418 s
+[15:56:11]   cold-c1-http bypass: lifetime 5/5, repetition 3/3: registry total CPU time 2.850 s, wall time 3.415 s
+[15:56:11] built main: source verified, go1.26.10, sha256 d26e39808482
+[15:56:11] finished cold-c1-http--main+bypass in 140 s; placement and network namespace verified for every repetition
+# fileReader bypass: registry CPU time and wall time against main
+
+Measured 2026-11-12 with `repro/measure-filereader-bypass.py` (command: `--lifetimes 5 --repetitions 3 --base f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b --bypass 910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9 --buffer-caps-kib  --cases cold-c1 --transports http --out /path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-main-vs-5081 --report-name script-report.md`), which drives `repro/run-repro.sh`. Every arm and case: 5 process lifetime(s) of 3 repetitions. All ± values are sample standard deviations over repetitions.
+
+## Arms
+
+- main: upstream main, commit f38cd9c0, tree `0208cb1a`.
+- bypass: bypass branch, commit 910dd4f2, tree `cf3fa2a7`.
+
+## Method and environment
+
+- Placement: registry and load client pinned to disjoint CPU sets of NUMA node 0 with `numactl --physcpubind --membind` (`NUMA_PIN=same-socket`): registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71.
+- Network: registry and client run in a private network namespace whose loopback has no netfilter rules (`LOOPBACK_NET=isolated`); HTTP/1.1 on loopback for both transports.
+- Verified, not assumed: for each of the 30 repetitions in 10 process lifetimes the load client recorded the CPU affinity of every thread, the memory policy of every mapping and the network namespace of registry and client; all match the requested placement and the namespace the harness verified (only `lo`, empty nftables ruleset). The script stops otherwise.
+- Foreign load: per repetition, the busy time of the pinned CPUs (user, nice, system, irq, softirq from `/proc/stat`) minus registry and client CPU time. A repetition is flagged when that remainder exceeds 0.3 s and 20% of the busy time. Flagged: 2 of 30 repetitions (sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l2-r1.json, sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l2-r2.json; they are included in the tables). Largest remainder: 2.22 s, 33% of the busy time of that repetition. The CPUs were also checked to be idle before every harness invocation.
+- CPU time: `/proc/<pid>/stat` of the registry process, resolution 0.01 s per repetition. Access logging disabled, `OTEL_TRACES_EXPORTER=none`.
+- Host: NVIDIA DGX GB200 Compute Tray, Neoverse-V2, 2 sockets with 72 cores each, aarch64, Linux 6.14.0-1015-nvidia-64k, page size 64 KiB, Ubuntu 24.04.3 LTS.
+- Build: go1.26.10 linux/arm64, `go build -mod=vendor -trimpath ./cmd/registry`; main `f38cd9c0` (tree `0208cb1a`), bypass `910dd4f2` (tree `cf3fa2a7`). Source and Go version of every binary verified.
+- Registry storage: ext4 on `nvme0n1p3` (SAMSUNG MZ1L21T9HCLS-00A07, not a rotating disk), readahead 256 KiB.
+
+## Whole-blob GETs, cold page cache
+
+One repetition is 8 GET requests, one for each of 8 distinct blobs of 1 GiB (8 GiB), one at a time or all at once. Before every repetition each blob file is dropped from the page cache with `posix_fadvise(POSIX_FADV_DONTNEED)`; `mincore()` showed no page of the files in the page cache before and every page after, in every repetition.
+
+Storage: ext4 on SAMSUNG MZ1L21T9HCLS-00A07 (NVMe solid-state drive), readahead 256 KiB. A result on this device says nothing about rotating disks or network filesystems.
+
+| Transport | Concurrency | Metric | main (mean ± sample SD, s) | n | bypass (mean ± sample SD, s) | n | Change of the mean, main to bypass | Separated |
+| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Plain HTTP | 1 | Wall time per repetition | 3.352 ± 0.073 | 15 | 3.383 ± 0.015 | 15 | +0.9% | no |
+| Plain HTTP | 1 | Registry total CPU time per repetition | 2.750 ± 0.040 | 15 | 2.821 ± 0.021 | 15 | +2.6% | yes |
+| Plain HTTP | 1 | Registry user CPU time per repetition | 0.485 ± 0.028 | 15 | 0.142 ± 0.012 | 15 | -70.7% | yes |
+| Plain HTTP | 1 | Registry kernel CPU time per repetition | 2.265 ± 0.033 | 15 | 2.679 ± 0.019 | 15 | +18.3% | yes |
+
+## Distributions
+
+Checked for every case and arm, registry total CPU time and wall time: the sorted values are split at their largest gap; a bimodal candidate is reported when both sides hold at least three values and the gap is at least four pooled within-side sample SDs and 0.03 s.
+
+No bimodal candidate.
+
+## Run
+
+1 harness invocations, 140 s from the first to the last. Per-repetition values: `data.json`; raw harness result files: `sessions/`; harness logs: `logs/`.
+
+[15:56:11] report: /path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-main-vs-5081/script-report.md
+2026-11-12T15:56:11Z done p1-http-1gib
+exit=0

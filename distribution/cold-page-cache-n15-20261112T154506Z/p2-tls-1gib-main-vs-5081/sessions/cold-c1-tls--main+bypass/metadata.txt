@@ -1,0 +1,21 @@
+go_version=go version go1.26.10 linux/arm64
+gotoolchain=go1.26.10
+registry_repo=/path/to/sendfile-perf-repro/distribution/gh-pr/distribution
+registry_commit=f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b
+patch_git_hash=719b22146cabf76f07b60d3752d064f7a5b70e7a
+harness_git_hash=70e426f34b0413616140ee7e23af5698ac65cf0e
+transports=tls
+protocol=HTTP/1.1
+requests=8
+concurrency=1
+chunk_mib=32
+layer_mib=512
+repeats=3
+blob_bytes=1073741824
+blob_count=8
+whole_blob=1
+cold_cache=1
+lifetimes=5
+variants=both
+numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+loopback_net=isolated net_namespace=net:[4026542154] host_net_namespace=net:[4026531840] interfaces=lo netfilter_rules=empty(nft-list-ruleset)

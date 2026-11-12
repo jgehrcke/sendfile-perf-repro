@@ -1,0 +1,120 @@
+{
+ "host_network_namespace": "net:[4026531840]",
+ "sampling_passes": 701,
+ "interval_s": 0.5,
+ "checker_cpus_allowed": "72-143",
+ "work_directory": "/path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/",
+ "processes": [
+  {
+   "executable": "bin/registry-unpatched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 343,
+   "pids": [
+    1340083,
+    1341631,
+    1343197,
+    1344715,
+    1346337,
+    1349552,
+    1351295,
+    1353170,
+    1354792,
+    1356337
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "load-repeated",
+   "cpus_allowed_of_threads": [
+    "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 673,
+   "pids": [
+    1340299,
+    1341142,
+    1341878,
+    1342642,
+    1343521,
+    1344150,
+    1344936,
+    1345729,
+    1346545,
+    1347171,
+    1349795,
+    1350711,
+    1351508,
+    1352411,
+    1353416,
+    1354139,
+    1355000,
+    1355705,
+    1356556,
+    1357424
+   ]
+  },
+  {
+   "executable": "bin/registry-patched",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70"
+   ],
+   "numa_policies": [
+    "bind:0"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 344,
+   "pids": [
+    1340933,
+    1342398,
+    1343942,
+    1345429,
+    1346967,
+    1350459,
+    1352198,
+    1353886,
+    1355492,
+    1357210
+   ]
+  },
+  {
+   "executable": "repro-helper",
+   "helper_subcommand": "",
+   "cpus_allowed_of_threads": [
+    "0-143"
+   ],
+   "numa_policies": [
+    "default"
+   ],
+   "network_namespace": "net:[4026542154]",
+   "samples": 1,
+   "pids": [
+    1356329
+   ]
+  }
+ ],
+ "network_namespaces": {
+  "net:[4026542154]": {
+   "first_seen_pid": 1340083,
+   "interfaces": [
+    "lo"
+   ],
+   "ip_link_exit": 0,
+   "ip_link_stderr": "",
+   "nft_list_ruleset_stdout": "",
+   "nft_list_ruleset_exit": 0,
+   "nft_list_ruleset_stderr": "",
+   "is_host_namespace": false
+  }
+ }
+}

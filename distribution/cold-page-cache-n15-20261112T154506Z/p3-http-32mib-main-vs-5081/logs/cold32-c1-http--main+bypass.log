@@ -1,0 +1,302 @@
+==> loopback_net=isolated (entered after the builds)
+==> NUMA same-socket pinning active: node 0, registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71; detected nodes with CPUs: 0 1
+==> settings: addr=127.0.0.1:55300 blob=33554432B blobs=128 whole_blob=1 cold_cache=1 lifetimes=4 variants=both chunk=33554432B requests=128 concurrency=1 auto_target_seconds=1.0 sweep_auto_target_seconds="1.0" warmup=one-request-per-chunk-once-per-variant numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+==> fetching /path/to/sendfile-perf-repro/distribution/gh-pr/distribution refs
+==> using distribution commit f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b (f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b)
+==> building unpatched registry
+==> keeping cached patched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-patched
+==> LOOPBACK_NET=isolated: re-executing in a private network namespace
+==> loopback_net=isolated net_namespace=net:[4026542154] host_net_namespace=net:[4026531840] interfaces=lo netfilter_rules=empty(nft-list-ruleset)
+==> NUMA same-socket pinning active: node 0, registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71; detected nodes with CPUs: 0 1
+==> settings: addr=127.0.0.1:55300 blob=33554432B blobs=128 whole_blob=1 cold_cache=1 lifetimes=4 variants=both chunk=33554432B requests=128 concurrency=1 auto_target_seconds=1.0 sweep_auto_target_seconds="1.0" warmup=one-request-per-chunk-once-per-variant numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+==> using distribution commit f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b (f38cd9c02bf0c9a50d8a03adf7b57e2b3c92141b)
+==> keeping cached unpatched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-unpatched
+==> keeping cached patched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-patched
+==> preparing 128 deterministic blob(s) of 33554432 bytes
+==> benchmark transport: http (HTTP/1.1), Go: go version go1.26.10 linux/arm64
+==> seeding local registry storage; this is not a measured run
+==> launching temporary storage-seeding registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-storage-seed.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> temporary storage-seeding registry ready with pid 1392064
+==> blob already present: sha256:9cfb2a0927c4ce077588f7ca093b4f2d842e9c5a1a7b17e8809f4bc11c8265b7
+==> blob already present: sha256:8a06b4984a4045d2c42af4088c6aaf02e4995ca28b99cc5155317a78988bff1f
+==> blob already present: sha256:cc8253ee6443225b641a3ea0ae9c48de4ed13b8457d4a0dad0a296ecfa0d5a3c
+==> blob already present: sha256:9b4d77e37e2b2fbe8533bc3dde1903352cdc4758425c15073ec7e2b9d62aba46
+==> blob already present: sha256:f9daa582f040435c2b3d1f3a2ddb54e223c6ca9ecd14931f932851712dda9e06
+==> blob already present: sha256:ffa5382b2cb2553477e4808eba739e0396c44e7e2c0a28e98e8f7f17d7de6234
+==> blob already present: sha256:de0b4117a4e86b121bfdf46c6383654ff08f3d1c6b3916dd5526151929375951
+==> blob already present: sha256:590ad3f992328bffe84d371e50d801091e121bee432f566b9ed98f59aaf79f63
+==> blob already present: sha256:e2770a1f403605bbbf00a828c3bd6dc5a8187343aabf3c47644b8a382724181d
+==> blob already present: sha256:c05f7dc5d259f759852049477d8a58d4d3a0f388b7e76eb5f436138946ece3a3
+==> blob already present: sha256:cc4e505e755ce2af5c91afc60665f0b15215b64719083c81a2fcb8b1d19980b5
+==> blob already present: sha256:e2c24ef9c91dab8cfdcef55e6a2a74cf366c93d708bf7186c9eaecc26fc5e1b7
+==> blob already present: sha256:492630cce1497c479c63148fd534c731249f4059918c8919a4ddaeeb3f792bb4
+==> blob already present: sha256:18c9bdf5d7de7c66baa766b930dfe719b6fbb1ff4a149a1e781e4c1f17d9fc95
+==> blob already present: sha256:549314dc81bda7c317f9a9852c8867942e10738980fd2e86c6850a6119cb3198
+==> blob already present: sha256:fea48dc2d6d5c7093a1ca009b883c97373ce3886407d65b74baba33bb5f1cc62
+==> blob already present: sha256:6a2a5a4071937e0310e469633d016764210e653ac974d4f8ef05a79b65ab5eec
+==> blob already present: sha256:7ff2ff199cc52dc49e7f908346455f2c7dea59236dd26b8a4030746642ddeb29
+==> blob already present: sha256:7494663b75c0e679f5304674e6de91b4998a6398d6f8f810f4a1b1a6c219bd35
+==> blob already present: sha256:1704508ba6058da8368858c8458957aa18bb4f3b76de5efd4e66db8d288a8ec8
+==> blob already present: sha256:ba5659acfa3f2f3f24f5467654b9b6d1eb171a22bb1217dcdf9c2e69d4a032f5
+==> blob already present: sha256:53c51bd24f628c865ae04fbceb9d3657eba2d64617547628251067c3e627d8b0
+==> blob already present: sha256:47cdafc0475ca025af521193b2f91a697837d9d63584cb1be43e650068dbe573
+==> blob already present: sha256:6619c0d602cad6439881ebeefab229316b98316370139d01de471324da424a4b
+==> blob already present: sha256:6f6270520639b2301b291774184b146aa53e615c2571e99acb3706a5f4db8f66
+==> blob already present: sha256:d71e00b412a545914211bee5d9d14f68c7e0ad8a466ac06ff5a88fba3eddbbb7
+==> blob already present: sha256:c662396fb90637de457aa1df2255906380002b53cb8d2a4f0563a944a6aae760
+==> blob already present: sha256:dabe225d99c7f2078eb2c50d86cf4edad06202f2adcdc9a7af7559e0298f218a
+==> blob already present: sha256:b3f1df201482602dbdac2744b0ee1e7ac12d71a05ca1f38ae003e65fd2aada86
+==> blob already present: sha256:30d1af53157c38753cb3a942155f13d8bfb91a1c6fa3877be39b63e468867164
+==> blob already present: sha256:6d9fca42822e13acbd80f640284b1ac4fa9c7d1667b1a24874ce83681c14b5ae
+==> blob already present: sha256:f4cba51519d5b5c7ebfbaf92d5ddf877f4d0feacb6904aaa4e5a7860f1052a18
+==> blob already present: sha256:78c5c7a8c8a1b5cae266b81a1c992351aa9a0d3569ad549f5df4198ba9f81544
+==> blob already present: sha256:5789757ea44aeba27e8ef7bf927daca1ed431960eb6d0368e26545fd7ec38def
+==> blob already present: sha256:41d442f5b94eafc73759742eb98a6254d36fceb921d03b763d8f03cb72b8d7a8
+==> blob already present: sha256:91384a477e82d1da1477f35aa79a13076547c0a258483d6b20fdaff6aa77a510
+==> blob already present: sha256:7533e49a94cf7db2430539a3a179e66d5e1afc547af5406a255cd3d09eb14a27
+==> blob already present: sha256:ec377e7a64b4511a9acaa82b2019393cc8d42861422f3d8df27275c60824cf69
+==> blob already present: sha256:afdf439f9192b0caa86adf7b006e875443c1248f55fe0b342c33d0a3a07ca2bd
+==> blob already present: sha256:756aadaa65375e7e80abf842c40dc90369de898061db1163230e39d0db6a0b96
+==> blob already present: sha256:4801804db1c8b949801f7cb373c9f6015dd48d9f27a4788def713958b8f6926f
+==> blob already present: sha256:4ff309fdc0703438f124f98b1660d527c6fb60993332072d727e5c0b3b87fe13
+==> blob already present: sha256:6e49f14e33b62869c4dba486c3e3d42e4ad0bdf9b4bcce25e85bbf17a65ffe1f
+==> blob already present: sha256:558a0ea9f35cad69ac9cdd3f420a18b7e3961d24e56af2eed80d589c2b1d1090
+==> blob already present: sha256:0838f33be37de12dad9a5bb549d91904a71125cab592c3a42e69fcdc88e1fbee
+==> blob already present: sha256:05867d9a76198a2a77d0e70ed4a05d61b4360562d79583ca596fe30217010d84
+==> blob already present: sha256:146d5bfbd99a80e9caf654b7636c5b9a7e41b570fdfd29cc31ec637ced8d072a
+==> blob already present: sha256:f227d3453f5c45a969e7a612638d240e5a844a50c07ac7f24396456da990dd73
+==> blob already present: sha256:d2966aeb54bf605409d77a66f991133a494e94cd8b70b68eecc50a51365cb9cb
+==> blob already present: sha256:67fbacfe11d900f4087f98daa9bcd3e21ebad075deff314054364955c86e8be3
+==> blob already present: sha256:2d72b70a4c6fea4296350be6291f990c32c2ed25103a16e4bbb546873fb4757c
+==> blob already present: sha256:9b22f3e22ac2a98c5c7efac23f5f45697ef815a92f0a74710ae87576a98ce342
+==> blob already present: sha256:d6ec5efaef0b404c890b215dd73111306c77eeb409854e8d63660a11ec1f25a7
+==> blob already present: sha256:400a6b9f5e0598b56d6a8f06ce4ee9e9c42eefd5deba5ef25770d1a3c0f1c7e4
+==> blob already present: sha256:dff9c8965cf1b7692a78a6f048cf56f81c7551ba6196cdff8c68d733abff70d8
+==> blob already present: sha256:caa3caba88c4e55a44a3287a90a90d4358336121448a4becdeb1af3c9bda4408
+==> blob already present: sha256:a43a1cde0b42794e0d9e90e6a127c0a9847f292500c158578c93d4e81449827d
+==> blob already present: sha256:386160b6ec521efab2456fd719e839cbd3c80e357540d0f503aea86bd4d760f1
+==> blob already present: sha256:69de13c28f249f93e52b093830be1a5cda1f3c9d91d1bd045b84507fd465a10c
+==> blob already present: sha256:2a58dcac0ed352da4d1024573869dfd2d7d4475e3e75c595a8a589fd822a0927
+==> blob already present: sha256:552c9cc658bb5461891a36fca3b1850cf5eb66187da49982c0ccb240ff18fae3
+==> blob already present: sha256:14d8e886c22c13054c142f93c7712074357da9fc42b13e79263ee3dfc41af201
+==> blob already present: sha256:6d966848ee6002a1a63bf99bb0916123001d411b7c213b33465a1c3121da988f
+==> blob already present: sha256:2b064b0e2498da45e3968844c8e771573fab26a4acb5e3d0500aa98ce0ffb0dd
+==> blob already present: sha256:e723aa554670277c9ac961a303a602f719892d22c7e57b1f6ea9bdc841cb91b0
+==> blob already present: sha256:b38a477c341f5c2c756163fd2d8c91857ff0dccd8cea46ce173d399705938299
+==> blob already present: sha256:073e199266b6341d43adcf0a9c14b2770ee494339c68fe29f6d5df34e011d359
+==> blob already present: sha256:c9b7bce500b1daaf8fa934a4ab788c3afd01079f66af247f652fbea817bc2265
+==> blob already present: sha256:00d27b73a6f33ba6b2368acb7347de11374db933b78fcde9b625a93d5f17cd32
+==> blob already present: sha256:4ed331e37eb2fed85c9f4930f873189e9600ea442af8c941c1f0841436b63f17
+==> blob already present: sha256:0ac3aa9c0dc87db56ea033afd848e4f74ea948ac5490d0a3e64e1079a09cd009
+==> blob already present: sha256:2b4604b9e44919e661c8d7c226b4a68e80a324096717885c57ce340df907dd5e
+==> blob already present: sha256:9f77427007f6f9378cd5f3bf2204ad0a5c82a2dd50ca5a850bbd992b0be39422
+==> blob already present: sha256:178ac77959c8db4b48ba6500577c949ef9ad2e1503ab04069edd230397dcaa20
+==> blob already present: sha256:a727e799553f0a22401b4ce0aad30b9381a42faf33c5ebd685751faaa1c14ec3
+==> blob already present: sha256:5f091b8cfa0307ea9549340a83519aca15d67d5b2aa8a652b2ccd53ad68e18bf
+==> blob already present: sha256:f85b1019aef9ab20d534f040cea139d7ffb334d4f85cc3b49fbbd0089b45862a
+==> blob already present: sha256:b15739ce5e3a704fa2ec44867c3871bd045cad743571b3a1d78f2ba96013afef
+==> blob already present: sha256:1087a4d14e6010b402718d9a3f5c679a3058792fa1e42a72b82fb7bac685fd8d
+==> blob already present: sha256:883970f92dbfa4e43cc72ca88676d7786b1af14464ee33437abefc8f1cf90de7
+==> blob already present: sha256:62d04203f09ff1181b11b345cac916efa881a74b7abc96ab42adb9716b6ef579
+==> blob already present: sha256:816df2319ee62c512f90db2b21c1750064ad72bd6b1ed43bd5eb52705d62a430
+==> blob already present: sha256:3091423a652a78754d483e0b46a0cac5ddd2534bba9bb1b42b04f4b24d87263a
+==> blob already present: sha256:4a09d829b32f74d2b452f648b211e2f48caf26425560516950910eb584a7531c
+==> blob already present: sha256:53e4902e55aab027a75c2de8c1e472c2fa76f40b30ef780ed217cd007d86507c
+==> blob already present: sha256:212f95faff437bc1cd60fc01ab734328fd59cbbaa5781b743022c7b75e9ea7bc
+==> blob already present: sha256:3ef7bfad034b9eee4a8deeabeb3fd4aaa4b197af13d27a6f5e6ed68d51768438
+==> blob already present: sha256:30cd29c9138f181549df26e41e01067b48d977158eb905250dd2f84968d9a6d5
+==> blob already present: sha256:0b45030bd0b2eb2de72440c48768813db5fd438e038a8dfb1e98fade8868dc11
+==> blob already present: sha256:10016cb53aaf6991649f499f7737512d5219009c92dae90ff4cc101178090aa3
+==> blob already present: sha256:1dd41dd5ad223d01d90759b207aa25ccbdfa70fabfc55cac576c3ca3e0594c6c
+==> blob already present: sha256:31911dd272f07fdf7176b16abf4f8ad93fa49e36862153219797e19cb75797a3
+==> blob already present: sha256:fcdf6c57d7f1f5a9dabaecef982344758571acbd8ca2ed416db422232f84bb4f
+==> blob already present: sha256:f09a95d419da1c934a5d168bb5b82eafa65b1874984f2d58dc43c6c8b6fa7c55
+==> blob already present: sha256:c16217ba66c55567541b5beb8f503ca8edda9d0eff44a8f6c83ca8f56826fb59
+==> blob already present: sha256:c44f28bc8e07d88b057349bb4a92894da7b4fb5d69124a6b6e52c9acee661a70
+==> blob already present: sha256:818f3b627a4f35dbe7cc79728249a9a035e09d2f34202da6b62cc24ff3e93176
+==> blob already present: sha256:c01f943dcb520ead81875000ed58b8ea8826c5bb32a7becead019c4cda47d052
+==> blob already present: sha256:43de1cceb69ac6fa7323e94a9f31899a8af288c39927a27fd852866291a0a09b
+==> blob already present: sha256:114ea47e8d303c49cada03d221fef7a5f090065b5db88fed9b099c7cc84af723
+==> blob already present: sha256:85ae478ecdbe3d1d353a0ce0a53133a0ae636105de151298970296214942443b
+==> blob already present: sha256:233665dab902d8b44d28f4329a78b35fc71e4f4379ebdff6275a2961235e5f88
+==> blob already present: sha256:aef2c82016730cb1d5ee34fa5cdc7b5cdee8fbfc6818f0f01580e6f8edc5e908
+==> blob already present: sha256:97bf37ca4b0560471e96f37fdc785ed88346e10f19af6f2408cf19602c8a3afa
+==> blob already present: sha256:2cb33c31169386df08cfa843462c8ae95ac7c3d9d98919a2e2782af5f461a31c
+==> blob already present: sha256:577ab745ad68f1e5bc3447648ebe1e77d4cdff94b2ba136d19e66f4c93c048f1
+==> blob already present: sha256:9af88a067fa8d42a10cd858193c2feffba9767e40351cd9ec0ed33a768ef3f98
+==> blob already present: sha256:9a6abfedc85509045d0f6cfc8c62d95c2e243de495212ad31f0805e0a4f2c7b1
+==> blob already present: sha256:775aa4919ab3267dc498a48af4a09508d6179d493556feaa4e5106a7e3d8bf09
+==> blob already present: sha256:fbcbab4cbe3bf633777694a1eb591d485a5f46483d7637558bc8286e6ea199af
+==> blob already present: sha256:edb89b21313b85d9f2fcc849536ee90b25b2149e5bfe756e6a576a422519d016
+==> blob already present: sha256:f306b2a675a20a5471ca049fa27f5b63b3bb502104ea8404974b7e21ac2b5fae
+==> blob already present: sha256:ed1e4c9b8fd41bafc283a4888f0927331d9465b70e219ea73229c5e6d596a4e1
+==> blob already present: sha256:936c018ab23126d7f760ffb0f607f70139d2013885e853e1067667f7614908e9
+==> blob already present: sha256:10cd5be99d1886e98af11ea79d37346752890bba760d2db3a54078573968557c
+==> blob already present: sha256:4f2608384079e0a40c5c87b9a84febb797456396d1fe8f1dd144d588ddd03b0e
+==> blob already present: sha256:85f55ee824406760cd9f82ff0f62bb6534153e9e82f429f7d91ae97b9bd55351
+==> blob already present: sha256:4cbd8240b2a4c7747595ad5ebfa80245f2a6d442e9735175cf0a43388eae4c93
+==> blob already present: sha256:937eccd308c96f126ed992088c98cc6eb2bdd97cc3435d823eaf1aa5ae9be3b0
+==> blob already present: sha256:2bc55a6af38cd1f884a37de6e81af8a0d248f089873e978da56cbf2acf70a79f
+==> blob already present: sha256:df70b9226fee672aaed1273d8e8faab4947ecb8ac8c8cd9cb753dec0ba5eb75e
+==> blob already present: sha256:8490335e6121808f0bcaf6d6bba26eb12cb8a0a012d105cbb2d4c5773bedd5d2
+==> blob already present: sha256:30a2f357ec5d4926adaa88f2c8254da4d731716cd23c175fc0be6b272df00e2b
+==> blob already present: sha256:2426d4656e11cb2e495421660d48aa7ca3c6dd8de99e83de36bbee79f5db91dc
+==> blob already present: sha256:d4cd35fcf18d2c01828fd5ad1f2acc928831098aaa77760c9c6a5b3d6be79f0a
+==> blob already present: sha256:417d6733cf137226ad0484b1276578e0d47662149007ecc85dc761d325a1d12b
+==> blob already present: sha256:a6f6516de6f0575ce502df20eb9b1e6c8ca9b9ad55383463f1618ae5292f92f2
+==> blob already present: sha256:dfaf7c15237c717ce99a5d26adcc33b76300c3e3e903e1415a40837abd7883d5
+==> terminating temporary storage-seeding registry pid 1392064 on 127.0.0.1:55300
+==> terminated temporary storage-seeding registry pid 1392064
+==> process lifetime 1 of 4
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1392546
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+cold page cache: waiting for 31 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/81/818f3b627a4f35dbe7cc79728249a9a035e09d2f34202da6b62cc24ff3e93176/data to become droppable (10 s)
+cold page cache: waiting for 31 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/81/818f3b627a4f35dbe7cc79728249a9a035e09d2f34202da6b62cc24ff3e93176/data to become droppable (20 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/81/818f3b627a4f35dbe7cc79728249a9a035e09d2f34202da6b62cc24ff3e93176/data needed 2846 drop attempts, 28928 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/fb/fbcbab4cbe3bf633777694a1eb591d485a5f46483d7637558bc8286e6ea199af/data needed 477 drop attempts, 4839 ms, until no page was resident
+unpatched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.819s registry_cpu_total=1.590s registry_cpu_user=0.470s registry_cpu_kernel=1.120s cpu(one-core)=87.4% cpu(host)=2.43% throughput=2251.7 MiB/s cpu_per_GiB=0.398s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.721s registry_cpu_total=1.580s registry_cpu_user=0.400s registry_cpu_kernel=1.180s cpu(one-core)=91.8% cpu(host)=2.55% throughput=2380.6 MiB/s cpu_per_GiB=0.395s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.723s registry_cpu_total=1.580s registry_cpu_user=0.410s registry_cpu_kernel=1.170s cpu(one-core)=91.7% cpu(host)=2.55% throughput=2377.3 MiB/s cpu_per_GiB=0.395s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1392546 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1392546
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1393890
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.761s registry_cpu_total=1.490s registry_cpu_user=0.110s registry_cpu_kernel=1.380s cpu(one-core)=84.6% cpu(host)=2.35% throughput=2325.3 MiB/s cpu_per_GiB=0.372s
+patched: starting timed repetition 2 of 3
+patched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.755s registry_cpu_total=1.480s registry_cpu_user=0.110s registry_cpu_kernel=1.370s cpu(one-core)=84.4% cpu(host)=2.34% throughput=2334.6 MiB/s cpu_per_GiB=0.370s
+patched: starting timed repetition 3 of 3
+patched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.731s registry_cpu_total=1.460s registry_cpu_user=0.110s registry_cpu_kernel=1.350s cpu(one-core)=84.3% cpu(host)=2.34% throughput=2365.8 MiB/s cpu_per_GiB=0.365s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1393890 on 127.0.0.1:55300
+==> terminated patched registry pid 1393890
+==> process lifetime 2 of 4
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1394435
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+unpatched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.811s registry_cpu_total=1.600s registry_cpu_user=0.400s registry_cpu_kernel=1.200s cpu(one-core)=88.3% cpu(host)=2.45% throughput=2261.6 MiB/s cpu_per_GiB=0.400s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.718s registry_cpu_total=1.580s registry_cpu_user=0.430s registry_cpu_kernel=1.150s cpu(one-core)=91.9% cpu(host)=2.55% throughput=2383.5 MiB/s cpu_per_GiB=0.395s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.717s registry_cpu_total=1.560s registry_cpu_user=0.380s registry_cpu_kernel=1.180s cpu(one-core)=90.8% cpu(host)=2.52% throughput=2384.9 MiB/s cpu_per_GiB=0.390s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1394435 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1394435
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1395028
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.742s registry_cpu_total=1.500s registry_cpu_user=0.100s registry_cpu_kernel=1.400s cpu(one-core)=86.1% cpu(host)=2.39% throughput=2350.7 MiB/s cpu_per_GiB=0.375s
+patched: starting timed repetition 2 of 3
+patched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.732s registry_cpu_total=1.480s registry_cpu_user=0.110s registry_cpu_kernel=1.370s cpu(one-core)=85.4% cpu(host)=2.37% throughput=2364.3 MiB/s cpu_per_GiB=0.370s
+patched: starting timed repetition 3 of 3
+patched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.736s registry_cpu_total=1.470s registry_cpu_user=0.100s registry_cpu_kernel=1.370s cpu(one-core)=84.7% cpu(host)=2.35% throughput=2359.3 MiB/s cpu_per_GiB=0.367s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1395028 on 127.0.0.1:55300
+==> terminated patched registry pid 1395028
+==> process lifetime 3 of 4
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1395526
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+unpatched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.835s registry_cpu_total=1.620s registry_cpu_user=0.420s registry_cpu_kernel=1.200s cpu(one-core)=88.3% cpu(host)=2.45% throughput=2232.7 MiB/s cpu_per_GiB=0.405s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.738s registry_cpu_total=1.590s registry_cpu_user=0.400s registry_cpu_kernel=1.190s cpu(one-core)=91.5% cpu(host)=2.54% throughput=2357.0 MiB/s cpu_per_GiB=0.398s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.752s registry_cpu_total=1.600s registry_cpu_user=0.430s registry_cpu_kernel=1.170s cpu(one-core)=91.3% cpu(host)=2.54% throughput=2338.0 MiB/s cpu_per_GiB=0.400s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1395526 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1395526
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1396036
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.747s registry_cpu_total=1.510s registry_cpu_user=0.120s registry_cpu_kernel=1.390s cpu(one-core)=86.5% cpu(host)=2.40% throughput=2345.1 MiB/s cpu_per_GiB=0.378s
+patched: starting timed repetition 2 of 3
+patched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.779s registry_cpu_total=1.530s registry_cpu_user=0.120s registry_cpu_kernel=1.410s cpu(one-core)=86.0% cpu(host)=2.39% throughput=2303.0 MiB/s cpu_per_GiB=0.383s
+patched: starting timed repetition 3 of 3
+patched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.762s registry_cpu_total=1.480s registry_cpu_user=0.120s registry_cpu_kernel=1.360s cpu(one-core)=84.0% cpu(host)=2.33% throughput=2324.3 MiB/s cpu_per_GiB=0.370s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1396036 on 127.0.0.1:55300
+==> terminated patched registry pid 1396036
+==> process lifetime 4 of 4
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1396585
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+unpatched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.828s registry_cpu_total=1.630s registry_cpu_user=0.380s registry_cpu_kernel=1.250s cpu(one-core)=89.2% cpu(host)=2.48% throughput=2240.3 MiB/s cpu_per_GiB=0.407s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.731s registry_cpu_total=1.580s registry_cpu_user=0.440s registry_cpu_kernel=1.140s cpu(one-core)=91.3% cpu(host)=2.54% throughput=2365.9 MiB/s cpu_per_GiB=0.395s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+unpatched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.739s registry_cpu_total=1.600s registry_cpu_user=0.410s registry_cpu_kernel=1.190s cpu(one-core)=92.0% cpu(host)=2.56% throughput=2354.7 MiB/s cpu_per_GiB=0.400s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1396585 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1396585
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T161610Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1397041
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=128 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r1: requests=128 concurrency=1 max_incoming_responses=1 wall=1.774s registry_cpu_total=1.510s registry_cpu_user=0.110s registry_cpu_kernel=1.400s cpu(one-core)=85.1% cpu(host)=2.36% throughput=2309.4 MiB/s cpu_per_GiB=0.378s
+patched: starting timed repetition 2 of 3
+patched-r2: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r2: requests=128 concurrency=1 max_incoming_responses=1 wall=1.757s registry_cpu_total=1.510s registry_cpu_user=0.120s registry_cpu_kernel=1.390s cpu(one-core)=85.9% cpu(host)=2.39% throughput=2330.6 MiB/s cpu_per_GiB=0.378s
+patched: starting timed repetition 3 of 3
+patched-r3: cold page cache: 128 blob files, 65536 pages, resident before=0 after=65536
+patched-r3: requests=128 concurrency=1 max_incoming_responses=1 wall=1.746s registry_cpu_total=1.470s registry_cpu_user=0.110s registry_cpu_kernel=1.360s cpu(one-core)=84.2% cpu(host)=2.34% throughput=2345.3 MiB/s cpu_per_GiB=0.367s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1397041 on 127.0.0.1:55300
+==> terminated patched registry pid 1397041
+==> done; session results: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/results/20261112T161610Z

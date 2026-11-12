@@ -1,0 +1,653 @@
+{
+ "cases": {
+  "cold-c1-http": {
+   "main": [
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 1,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 2.83,
+       "registry_cpu_time_user_s": 0.16,
+       "registry_cpu_time_kernel_s": 2.67,
+       "wall_time_s": 3.388929146,
+       "client_cpu_time_s": 2.105107,
+       "pinned_cpus_busy_time_s": 5.23,
+       "other_cpu_time_s": 0.295,
+       "other_cpu_time_fraction": 0.0564,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l1-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.83,
+       "registry_cpu_time_user_s": 0.19,
+       "registry_cpu_time_kernel_s": 2.64,
+       "wall_time_s": 3.377209949,
+       "client_cpu_time_s": 2.093786,
+       "pinned_cpus_busy_time_s": 5.22,
+       "other_cpu_time_s": 0.296,
+       "other_cpu_time_fraction": 0.0567,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l1-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.82,
+       "registry_cpu_time_user_s": 0.17,
+       "registry_cpu_time_kernel_s": 2.65,
+       "wall_time_s": 3.375640364,
+       "client_cpu_time_s": 2.071282,
+       "pinned_cpus_busy_time_s": 5.17,
+       "other_cpu_time_s": 0.279,
+       "other_cpu_time_fraction": 0.0539,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l1-r3.json"
+      }
+     ],
+     "registry_pid": 1315266,
+     "client_pid": 1315477,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 2,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 2.9,
+       "registry_cpu_time_user_s": 0.13,
+       "registry_cpu_time_kernel_s": 2.77,
+       "wall_time_s": 3.428442841,
+       "client_cpu_time_s": 2.120908,
+       "pinned_cpus_busy_time_s": 5.43,
+       "other_cpu_time_s": 0.409,
+       "other_cpu_time_fraction": 0.0753,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l2-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.88,
+       "registry_cpu_time_user_s": 0.17,
+       "registry_cpu_time_kernel_s": 2.71,
+       "wall_time_s": 3.402453315,
+       "client_cpu_time_s": 2.1140610000000004,
+       "pinned_cpus_busy_time_s": 5.09,
+       "other_cpu_time_s": 0.096,
+       "other_cpu_time_fraction": 0.0188,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l2-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.89,
+       "registry_cpu_time_user_s": 0.14,
+       "registry_cpu_time_kernel_s": 2.75,
+       "wall_time_s": 3.4321919579999998,
+       "client_cpu_time_s": 2.1174370000000007,
+       "pinned_cpus_busy_time_s": 5.81,
+       "other_cpu_time_s": 0.803,
+       "other_cpu_time_fraction": 0.1381,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l2-r3.json"
+      }
+     ],
+     "registry_pid": 1317711,
+     "client_pid": 1317955,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 3,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 2.89,
+       "registry_cpu_time_user_s": 0.14,
+       "registry_cpu_time_kernel_s": 2.75,
+       "wall_time_s": 3.415165953,
+       "client_cpu_time_s": 2.106879,
+       "pinned_cpus_busy_time_s": 5.38,
+       "other_cpu_time_s": 0.383,
+       "other_cpu_time_fraction": 0.0712,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l3-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.85,
+       "registry_cpu_time_user_s": 0.17,
+       "registry_cpu_time_kernel_s": 2.68,
+       "wall_time_s": 3.392319901,
+       "client_cpu_time_s": 2.103104,
+       "pinned_cpus_busy_time_s": 5.32,
+       "other_cpu_time_s": 0.367,
+       "other_cpu_time_fraction": 0.069,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l3-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.84,
+       "registry_cpu_time_user_s": 0.16,
+       "registry_cpu_time_kernel_s": 2.68,
+       "wall_time_s": 3.389250314,
+       "client_cpu_time_s": 2.0839690000000006,
+       "pinned_cpus_busy_time_s": 4.8,
+       "other_cpu_time_s": -0.124,
+       "other_cpu_time_fraction": -0.0258,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l3-r3.json"
+      }
+     ],
+     "registry_pid": 1321609,
+     "client_pid": 1321855,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 4,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 2.88,
+       "registry_cpu_time_user_s": 0.17,
+       "registry_cpu_time_kernel_s": 2.71,
+       "wall_time_s": 3.407060909,
+       "client_cpu_time_s": 2.126615,
+       "pinned_cpus_busy_time_s": 5.42,
+       "other_cpu_time_s": 0.413,
+       "other_cpu_time_fraction": 0.0763,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l4-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.88,
+       "registry_cpu_time_user_s": 0.18,
+       "registry_cpu_time_kernel_s": 2.7,
+       "wall_time_s": 3.384647628,
+       "client_cpu_time_s": 2.127103,
+       "pinned_cpus_busy_time_s": 5.11,
+       "other_cpu_time_s": 0.103,
+       "other_cpu_time_fraction": 0.0201,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l4-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.9,
+       "registry_cpu_time_user_s": 0.18,
+       "registry_cpu_time_kernel_s": 2.72,
+       "wall_time_s": 3.407061921,
+       "client_cpu_time_s": 2.101311,
+       "pinned_cpus_busy_time_s": 4.81,
+       "other_cpu_time_s": -0.191,
+       "other_cpu_time_fraction": -0.0398,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l4-r3.json"
+      }
+     ],
+     "registry_pid": 1324237,
+     "client_pid": 1324477,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 5,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 2.93,
+       "registry_cpu_time_user_s": 0.17,
+       "registry_cpu_time_kernel_s": 2.76,
+       "wall_time_s": 3.440497945,
+       "client_cpu_time_s": 2.145621,
+       "pinned_cpus_busy_time_s": 5.27,
+       "other_cpu_time_s": 0.194,
+       "other_cpu_time_fraction": 0.0369,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l5-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.91,
+       "registry_cpu_time_user_s": 0.14,
+       "registry_cpu_time_kernel_s": 2.77,
+       "wall_time_s": 3.42063418,
+       "client_cpu_time_s": 2.128171,
+       "pinned_cpus_busy_time_s": 5.27,
+       "other_cpu_time_s": 0.232,
+       "other_cpu_time_fraction": 0.044,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l5-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 2.89,
+       "registry_cpu_time_user_s": 0.17,
+       "registry_cpu_time_kernel_s": 2.72,
+       "wall_time_s": 3.423298602,
+       "client_cpu_time_s": 2.104095,
+       "pinned_cpus_busy_time_s": 4.89,
+       "other_cpu_time_s": -0.104,
+       "other_cpu_time_fraction": -0.0213,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/unpatched-default-n8-l5-r3.json"
+      }
+     ],
+     "registry_pid": 1326792,
+     "client_pid": 1326998,
+     "placement_verified": true
+    }
+   ],
+   "bypass": [
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 1,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 0.8,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.79,
+       "wall_time_s": 1.5773812569999999,
+       "client_cpu_time_s": 1.4046079999999999,
+       "pinned_cpus_busy_time_s": 2.41,
+       "other_cpu_time_s": 0.205,
+       "other_cpu_time_fraction": 0.0852,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l1-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.78,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.77,
+       "wall_time_s": 1.722590017,
+       "client_cpu_time_s": 1.375,
+       "pinned_cpus_busy_time_s": 2.18,
+       "other_cpu_time_s": 0.025,
+       "other_cpu_time_fraction": 0.0115,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l1-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.79,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.78,
+       "wall_time_s": 1.8874854060000001,
+       "client_cpu_time_s": 1.4371049999999999,
+       "pinned_cpus_busy_time_s": 3.82,
+       "other_cpu_time_s": 1.593,
+       "other_cpu_time_fraction": 0.417,
+       "foreign_load": true,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l1-r3.json"
+      }
+     ],
+     "registry_pid": 1316051,
+     "client_pid": 1316263,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 2,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 0.78,
+       "registry_cpu_time_user_s": 0,
+       "registry_cpu_time_kernel_s": 0.78,
+       "wall_time_s": 1.577387061,
+       "client_cpu_time_s": 1.383416,
+       "pinned_cpus_busy_time_s": 2.28,
+       "other_cpu_time_s": 0.117,
+       "other_cpu_time_fraction": 0.0511,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l2-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.78,
+       "registry_cpu_time_user_s": 0,
+       "registry_cpu_time_kernel_s": 0.78,
+       "wall_time_s": 1.648954365,
+       "client_cpu_time_s": 1.3486060000000002,
+       "pinned_cpus_busy_time_s": 2.59,
+       "other_cpu_time_s": 0.461,
+       "other_cpu_time_fraction": 0.1781,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l2-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.76,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.75,
+       "wall_time_s": 1.885840148,
+       "client_cpu_time_s": 1.3405740000000002,
+       "pinned_cpus_busy_time_s": 2.24,
+       "other_cpu_time_s": 0.139,
+       "other_cpu_time_fraction": 0.0622,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l2-r3.json"
+      }
+     ],
+     "registry_pid": 1319413,
+     "client_pid": 1319667,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 3,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 0.79,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.78,
+       "wall_time_s": 1.809910601,
+       "client_cpu_time_s": 1.361463,
+       "pinned_cpus_busy_time_s": 2.59,
+       "other_cpu_time_s": 0.439,
+       "other_cpu_time_fraction": 0.1693,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l3-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.76,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.75,
+       "wall_time_s": 1.785277341,
+       "client_cpu_time_s": 1.3482049999999997,
+       "pinned_cpus_busy_time_s": 2.13,
+       "other_cpu_time_s": 0.022,
+       "other_cpu_time_fraction": 0.0102,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l3-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.77,
+       "registry_cpu_time_user_s": 0,
+       "registry_cpu_time_kernel_s": 0.77,
+       "wall_time_s": 1.716605515,
+       "client_cpu_time_s": 1.362342,
+       "pinned_cpus_busy_time_s": 2.24,
+       "other_cpu_time_s": 0.108,
+       "other_cpu_time_fraction": 0.0481,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l3-r3.json"
+      }
+     ],
+     "registry_pid": 1323063,
+     "client_pid": 1323277,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 4,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 0.79,
+       "registry_cpu_time_user_s": 0,
+       "registry_cpu_time_kernel_s": 0.79,
+       "wall_time_s": 1.574151313,
+       "client_cpu_time_s": 1.3702660000000002,
+       "pinned_cpus_busy_time_s": 2.9,
+       "other_cpu_time_s": 0.74,
+       "other_cpu_time_fraction": 0.2551,
+       "foreign_load": true,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l4-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.79,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.78,
+       "wall_time_s": 1.739755799,
+       "client_cpu_time_s": 1.3790649999999998,
+       "pinned_cpus_busy_time_s": 2.5,
+       "other_cpu_time_s": 0.331,
+       "other_cpu_time_fraction": 0.1324,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l4-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.78,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.77,
+       "wall_time_s": 1.7820868650000001,
+       "client_cpu_time_s": 1.398492,
+       "pinned_cpus_busy_time_s": 2.52,
+       "other_cpu_time_s": 0.342,
+       "other_cpu_time_fraction": 0.1355,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l4-r3.json"
+      }
+     ],
+     "registry_pid": 1325167,
+     "client_pid": 1325377,
+     "placement_verified": true
+    },
+    {
+     "invocation": "cold-c1-http--main+bypass",
+     "process_lifetime": 5,
+     "repetitions": [
+      {
+       "registry_cpu_time_total_s": 0.8,
+       "registry_cpu_time_user_s": 0.01,
+       "registry_cpu_time_kernel_s": 0.79,
+       "wall_time_s": 1.5764547869999999,
+       "client_cpu_time_s": 1.417351,
+       "pinned_cpus_busy_time_s": 2.52,
+       "other_cpu_time_s": 0.303,
+       "other_cpu_time_fraction": 0.1201,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l5-r1.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.78,
+       "registry_cpu_time_user_s": 0,
+       "registry_cpu_time_kernel_s": 0.78,
+       "wall_time_s": 1.935947114,
+       "client_cpu_time_s": 1.3993280000000001,
+       "pinned_cpus_busy_time_s": 2.45,
+       "other_cpu_time_s": 0.271,
+       "other_cpu_time_fraction": 0.1105,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l5-r2.json"
+      },
+      {
+       "registry_cpu_time_total_s": 0.76,
+       "registry_cpu_time_user_s": 0,
+       "registry_cpu_time_kernel_s": 0.76,
+       "wall_time_s": 1.573982515,
+       "client_cpu_time_s": 1.421868,
+       "pinned_cpus_busy_time_s": 2.19,
+       "other_cpu_time_s": 0.008,
+       "other_cpu_time_fraction": 0.0037,
+       "foreign_load": false,
+       "cold_cache_pages": 131072,
+       "cold_cache_resident_pages_after": 131072,
+       "file": "sessions/cold-c1-http--main+bypass/http/patched-default-n8-l5-r3.json"
+      }
+     ],
+     "registry_pid": 1327635,
+     "client_pid": 1327930,
+     "placement_verified": true
+    }
+   ]
+  }
+ },
+ "invocations": [
+  {
+   "label": "cold-c1-http--main+bypass",
+   "case": "cold-c1",
+   "transport": "http",
+   "variants": "both",
+   "arm": "bypass",
+   "command": [
+    "--blob-bytes",
+    "1073741824",
+    "--blobs",
+    "8",
+    "--whole-blob",
+    "--cold-cache",
+    "--requests",
+    "8",
+    "--concurrency",
+    "1",
+    "--repeats",
+    "3",
+    "--lifetimes",
+    "5",
+    "--variants",
+    "both"
+   ],
+   "elapsed_s": 452.7,
+   "node_busy_percent_before": 0.08,
+   "numa_node": 0,
+   "registry_cpus": "0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70",
+   "client_cpus": "1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71",
+   "network_namespace": "net:[4026542154]",
+   "interfaces": "lo",
+   "netfilter_rules": "empty(nft-list-ruleset)"
+  }
+ ],
+ "builds": {
+  "main": {
+   "arm": "main",
+   "source_head": "910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9",
+   "source_changes": "",
+   "source_tree": "cf3fa2a71744d538e1e874055cb74f1db5d8fc52",
+   "binary_sha256": "388736837f723b5b356b1dc0760e71484e2847f1025972a73a8a03b0de288941",
+   "binary_go_version": "go1.26.10"
+  },
+  "bypass": {
+   "arm": "bypass",
+   "source_head": "910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9",
+   "source_changes": "2\t2\tgo.mod\n2\t2\tgo.sum\n26\t0\tinternal/dcontext/http.go\n71\t0\tinternal/dcontext/http_test.go\n3\t1\tregistry/proxy/proxyblobstore.go\n32\t0\tregistry/proxy/proxyblobstore_test.go\n1\t2\tregistry/registry.go\n8\t0\tvendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/handler.go\n86\t5\tvendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/internal/request/resp_writer_wrapper.go\n6\t2\tvendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/internal/semconv/server.go\n1\t1\tvendor/modules.txt",
+   "source_tree": "f7cc54505bb2cf6026c339a8766751c8eec23b8a",
+   "binary_sha256": "15891e789d343cb002f50acc62e08543d5e3dd6c5dbb30c2c72ed72c38e0f69d",
+   "binary_go_version": "go1.26.10"
+  }
+ },
+ "command": [
+  "repro/measure-filereader-bypass.py",
+  "--lifetimes",
+  "5",
+  "--repetitions",
+  "3",
+  "--base",
+  "910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9",
+  "--bypass",
+  "0eb9d5768544e74a8410d282d83146f326148de1",
+  "--buffer-caps-kib",
+  "",
+  "--cases",
+  "cold-c1",
+  "--transports",
+  "http",
+  "--out",
+  "/path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-5081-vs-5052",
+  "--report-name",
+  "script-report.arm-main-is-5081.arm-bypass-is-5052.md"
+ ],
+ "started_utc": "2026-11-12T15:46:17.727310+00:00",
+ "quick": false,
+ "lifetimes": 5,
+ "repetitions_per_lifetime": 3,
+ "foreign_load_threshold_fraction": 0.2,
+ "arms": {
+  "main": {
+   "title": "main",
+   "what": "upstream main, commit 910dd4f2",
+   "tree": "cf3fa2a71744d538e1e874055cb74f1db5d8fc52"
+  },
+  "bypass": {
+   "title": "bypass",
+   "what": "bypass branch, commit 0eb9d576",
+   "commit": "0eb9d5768544e74a8410d282d83146f326148de1",
+   "tree": "f7cc54505bb2cf6026c339a8766751c8eec23b8a",
+   "patch": "/path/to/sendfile-perf-repro/distribution/repro/cold-page-cache-n15-20261112T154506Z/p1-http-1gib-5081-vs-5052/patches/bypass.patch",
+   "patch_sha256": "48d27f60b77a227c0362a54eb541c5b3a2d2563b29e8192cad8a3fbae50fc3e0"
+  }
+ },
+ "environment": {
+  "kernel": "6.14.0-1015-nvidia-64k",
+  "architecture": "aarch64",
+  "page_size_bytes": 65536,
+  "clock_ticks_per_second": 100,
+  "cpu_model": "Neoverse-V2",
+  "sockets": "2",
+  "cores_per_socket": "72",
+  "threads_per_core": "1",
+  "logical_cpus": 144,
+  "system": "NVIDIA DGX GB200 Compute Tray",
+  "os": "Ubuntu 24.04.3 LTS",
+  "transparent_hugepage": "always [madvise] never",
+  "numa_node_used": 0,
+  "numa_node_cpus": "0-71",
+  "go_version": "go version go1.26.10 linux/arm64",
+  "go_build_flags": "-mod=vendor -trimpath",
+  "base_commit": "910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9",
+  "base_tree": "cf3fa2a71744d538e1e874055cb74f1db5d8fc52",
+  "bypass_commit": "0eb9d5768544e74a8410d282d83146f326148de1",
+  "bypass_tree": "f7cc54505bb2cf6026c339a8766751c8eec23b8a",
+  "harness_sha256": "e15b3cb4832eb7f0da8e0baa0dae6bcc9202e6a6b25c141138ef43eae239c665",
+  "script_sha256": "ae95335dc4686f3e5eaf8f8835111163b7e7f0a25b6be55f64c1e4cd07400148",
+  "repository_commit_of_harness": "4c7877349ede888f506877387e83641290e1c8ed",
+  "host_network_namespace": "net:[4026531840]",
+  "registry_storage": {
+   "directory": "/path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage",
+   "filesystem": "ext4",
+   "mount_source": "/dev/nvme0n1p3",
+   "mount_options": "rw,noatime,nodiratime,stripe=32",
+   "block_device": "nvme0n1",
+   "partition": "nvme0n1p3",
+   "model": "SAMSUNG MZ1L21T9HCLS-00A07",
+   "rotational": "0",
+   "read_ahead_kb": "256"
+  }
+ },
+ "finished_utc": "2026-11-12T15:53:51.017267+00:00",
+ "measurement_wall_time_s": 453
+}

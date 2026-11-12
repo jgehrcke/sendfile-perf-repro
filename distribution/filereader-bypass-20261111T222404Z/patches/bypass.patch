@@ -1,0 +1,254 @@
+diff --git a/registry/storage/blobserver.go b/registry/storage/blobserver.go
+index 6beef7e3..fff07216 100644
+--- a/registry/storage/blobserver.go
++++ b/registry/storage/blobserver.go
+@@ -3,7 +3,9 @@ package storage
+ import (
+ 	"context"
+ 	"fmt"
++	"io"
+ 	"net/http"
++	"os"
+ 	"time"
+ 
+ 	"github.com/distribution/distribution/v3"
+@@ -53,6 +55,28 @@ func (bs *blobServer) ServeBlob(ctx context.Context, w http.ResponseWriter, r *h
+ 	}
+ 	defer br.Close()
+ 
++	var blobReader io.ReadSeeker = br
++	// Check the driver name before calling Reader() to avoid unnecessary object-storage requests.
++	if shouldUseDirectFile(r) && bs.driver.Name() == "filesystem" {
++		rc, err := bs.driver.Reader(ctx, path, 0)
++		if err != nil {
++			return err
++		}
++		file, ok := rc.(*os.File)
++		if !ok {
++			// Use the original fileReader when middleware hides the file object.
++			rc.Close()
++		} else {
++			defer file.Close()
++			// Serve from the file itself. fileReader would add a buffer of up to
++			// fileReaderBufferSize per request and one more copy of the data.
++			// ServeContent determines the length by seeking to the end of the open file,
++			// rather than using desc.Size from the possibly cached blob statter.
++			// These sizes should agree because validated blobs are assumed immutable.
++			blobReader = file
++		}
++	}
++
+ 	w.Header().Set("ETag", fmt.Sprintf(`"%s"`, desc.Digest)) // If-None-Match handled by ServeContent
+ 	w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%.f", blobCacheControlMaxAge.Seconds()))
+ 
+@@ -70,6 +94,17 @@ func (bs *blobServer) ServeBlob(ctx context.Context, w http.ResponseWriter, r *h
+ 		w.Header().Set("Content-Length", fmt.Sprint(desc.Size))
+ 	}
+ 
+-	http.ServeContent(w, r, desc.Digest.String(), time.Time{}, br)
++	http.ServeContent(w, r, desc.Digest.String(), time.Time{}, blobReader)
+ 	return nil
+ }
++
++// shouldUseDirectFile reports whether ServeContent should receive the blob file directly.
++// HEAD sends no body. With If-Match or If-None-Match, ServeContent can answer HTTP 304 or 412
++// from the ETag alone, which ServeBlob sets from desc.Digest; fileReader leaves the file
++// unopened in those cases. ServeBlob passes time.Time{} to ServeContent, so it ignores
++// If-Modified-Since and If-Unmodified-Since. Range and If-Range do not cause HTTP 304 or 412.
++func shouldUseDirectFile(r *http.Request) bool {
++	return r.Method == http.MethodGet &&
++		r.Header.Get("If-Match") == "" &&
++		r.Header.Get("If-None-Match") == ""
++}
+diff --git a/registry/storage/blobserver_test.go b/registry/storage/blobserver_test.go
+new file mode 100644
+index 00000000..74bb19c6
+--- /dev/null
++++ b/registry/storage/blobserver_test.go
+@@ -0,0 +1,186 @@
++package storage
++
++import (
++	"context"
++	"errors"
++	"io"
++	"net/http"
++	"net/http/httptest"
++	"os"
++	"testing"
++
++	"github.com/distribution/distribution/v3/registry/storage/driver"
++	"github.com/distribution/distribution/v3/registry/storage/driver/filesystem"
++	"github.com/opencontainers/go-digest"
++	v1 "github.com/opencontainers/image-spec/specs-go/v1"
++)
++
++type fixedBlobStatter struct {
++	desc v1.Descriptor
++}
++
++func (s fixedBlobStatter) Stat(context.Context, digest.Digest) (v1.Descriptor, error) {
++	return s.desc, nil
++}
++
++type blobReaderSpy struct {
++	driver.StorageDriver
++	reads int
++	files []*os.File
++	wrap  func(io.ReadCloser) io.ReadCloser
++}
++
++func (d *blobReaderSpy) Reader(ctx context.Context, path string, offset int64) (io.ReadCloser, error) {
++	d.reads++
++	rc, err := d.StorageDriver.Reader(ctx, path, offset)
++	if err != nil {
++		return rc, err
++	}
++	if f, ok := rc.(*os.File); ok {
++		d.files = append(d.files, f)
++	}
++	if d.wrap != nil {
++		rc = d.wrap(rc)
++	}
++	return rc, nil
++}
++
++// fileBodyProbe records whether ServeContent copies the response body from
++// the blob file itself, not from a fileReader.
++type fileBodyProbe struct {
++	*httptest.ResponseRecorder
++	sawFile bool
++}
++
++func (w *fileBodyProbe) ReadFrom(r io.Reader) (int64, error) {
++	if limited, ok := r.(*io.LimitedReader); ok {
++		_, w.sawFile = limited.R.(*os.File)
++	}
++	return io.Copy(w.ResponseRecorder, r)
++}
++
++func newFilesystemBlobServer(t *testing.T, body string) (*blobServer, *blobReaderSpy, digest.Digest) {
++	t.Helper()
++	const path = "/blob"
++	content := []byte(body)
++	dgst := digest.FromBytes(content)
++	fs := filesystem.New(filesystem.DriverParameters{RootDirectory: t.TempDir(), MaxThreads: 25})
++	if err := fs.PutContent(context.Background(), path, content); err != nil {
++		t.Fatal(err)
++	}
++	spy := &blobReaderSpy{StorageDriver: fs}
++	return &blobServer{
++		driver:  spy,
++		statter: fixedBlobStatter{desc: v1.Descriptor{Digest: dgst, Size: int64(len(content)), MediaType: "application/octet-stream"}},
++		pathFn:  func(digest.Digest) (string, error) { return path, nil },
++	}, spy, dgst
++}
++
++func assertBlobReadersClosed(t *testing.T, spy *blobReaderSpy) {
++	t.Helper()
++	for _, f := range spy.files {
++		// Seek reports os.ErrClosed on every platform; Stat on Windows reports an invalid handle instead.
++		if _, err := f.Seek(0, io.SeekCurrent); !errors.Is(err, os.ErrClosed) {
++			t.Errorf("blob file remains open: Seek error = %v", err)
++		}
++	}
++}
++
++// Cover which requests are served from the blob file and which leave it
++// unopened; ServeContent owns the detailed conditional and range-header behavior.
++func TestBlobServerFilesystemContent(t *testing.T) {
++	for _, tc := range []struct {
++		name, method, rangeHeader, wantBody string
++		precondition, preconditionValue     string
++		wantStatus, wantReads               int
++		wantFile                            bool
++	}{
++		{name: "full", method: http.MethodGet, wantBody: "0123456789", wantStatus: http.StatusOK, wantReads: 1, wantFile: true},
++		{name: "range", method: http.MethodGet, rangeHeader: "bytes=2-5", wantBody: "2345", wantStatus: http.StatusPartialContent, wantReads: 1, wantFile: true},
++		{name: "head", method: http.MethodHead, wantStatus: http.StatusOK},
++		{name: "not-modified", method: http.MethodGet, precondition: "If-None-Match", preconditionValue: "match", wantStatus: http.StatusNotModified},
++		{name: "failed-precondition", method: http.MethodGet, precondition: "If-Match", preconditionValue: `"other"`, wantStatus: http.StatusPreconditionFailed},
++		{name: "if-match-pass", method: http.MethodGet, precondition: "If-Match", preconditionValue: "match", wantBody: "0123456789", wantStatus: http.StatusOK, wantReads: 1},
++	} {
++		t.Run(tc.name, func(t *testing.T) {
++			bs, spy, dgst := newFilesystemBlobServer(t, "0123456789")
++			req := httptest.NewRequest(tc.method, "/blob", nil)
++			req.Header.Set("Range", tc.rangeHeader)
++			if tc.precondition != "" {
++				value := tc.preconditionValue
++				if value == "match" {
++					value = `"` + dgst.String() + `"`
++				}
++				req.Header.Set(tc.precondition, value)
++			}
++			probe := &fileBodyProbe{ResponseRecorder: httptest.NewRecorder()}
++			if err := bs.ServeBlob(context.Background(), probe, req, dgst); err != nil {
++				t.Fatal(err)
++			}
++			assertBlobReadersClosed(t, spy)
++			if probe.Code != tc.wantStatus || probe.Body.String() != tc.wantBody {
++				t.Fatalf("response: status %d, body %q", probe.Code, probe.Body.String())
++			}
++			if spy.reads != tc.wantReads || probe.sawFile != tc.wantFile {
++				t.Errorf("Reader calls = %d, file source = %t", spy.reads, probe.sawFile)
++			}
++			if tc.wantStatus == http.StatusPartialContent && (probe.Header().Get("Content-Range") != "bytes 2-5/10" || probe.Header().Get("Content-Length") != "4") {
++				t.Errorf("range headers: %v", probe.Header())
++			}
++			if tc.method == http.MethodHead && probe.Header().Get("Content-Length") != "10" {
++				t.Errorf("HEAD headers: %v", probe.Header())
++			}
++		})
++	}
++}
++
++// A blob file missing after Stat must fail before HTTP 200 is committed;
++// the lazy fileReader would serve an empty body with the descriptor length.
++func TestBlobServerFilesystemMissingFile(t *testing.T) {
++	bs, spy, dgst := newFilesystemBlobServer(t, "0123456789")
++	if err := spy.Delete(context.Background(), "/blob"); err != nil {
++		t.Fatal(err)
++	}
++	w := httptest.NewRecorder()
++	err := bs.ServeBlob(context.Background(), w, httptest.NewRequest(http.MethodGet, "/blob", nil), dgst)
++	if !errors.As(err, new(driver.PathNotFoundError)) {
++		t.Fatalf("missing file error = %v", err)
++	}
++	if len(w.Header()) != 0 || w.Body.Len() != 0 {
++		t.Fatal("response written for a missing blob file")
++	}
++}
++
++// A driver middleware that wraps the reader hides the file; fileReader serves the blob.
++func TestBlobServerFilesystemWrappedReader(t *testing.T) {
++	bs, spy, dgst := newFilesystemBlobServer(t, "0123456789")
++	spy.wrap = func(rc io.ReadCloser) io.ReadCloser { return struct{ io.ReadCloser }{rc} }
++	probe := &fileBodyProbe{ResponseRecorder: httptest.NewRecorder()}
++	if err := bs.ServeBlob(context.Background(), probe, httptest.NewRequest(http.MethodGet, "/blob", nil), dgst); err != nil {
++		t.Fatal(err)
++	}
++	assertBlobReadersClosed(t, spy)
++	// One Reader call finds no file, the second is fileReader's.
++	if spy.reads != 2 || probe.sawFile || probe.Code != http.StatusOK || probe.Body.String() != "0123456789" {
++		t.Fatalf("Reader calls = %d, file source = %t, response = %d %q", spy.reads, probe.sawFile, probe.Code, probe.Body.String())
++	}
++}
++
++type nonFilesystemDriver struct{ *blobReaderSpy }
++
++func (nonFilesystemDriver) Name() string { return "non-filesystem" }
++
++// Only the filesystem driver is asked for a file.
++func TestBlobServerNonFilesystemReader(t *testing.T) {
++	bs, spy, dgst := newFilesystemBlobServer(t, "0123456789")
++	bs.driver = nonFilesystemDriver{spy}
++	probe := &fileBodyProbe{ResponseRecorder: httptest.NewRecorder()}
++	if err := bs.ServeBlob(context.Background(), probe, httptest.NewRequest(http.MethodGet, "/blob", nil), dgst); err != nil {
++		t.Fatal(err)
++	}
++	assertBlobReadersClosed(t, spy)
++	// Other drivers keep fileReader, without a Reader call before its lazy read.
++	if spy.reads != 1 || probe.sawFile || probe.Code != http.StatusOK || probe.Body.String() != "0123456789" {
++		t.Fatalf("Reader calls = %d, file source = %t, response = %d %q", spy.reads, probe.sawFile, probe.Code, probe.Body.String())
++	}
++}

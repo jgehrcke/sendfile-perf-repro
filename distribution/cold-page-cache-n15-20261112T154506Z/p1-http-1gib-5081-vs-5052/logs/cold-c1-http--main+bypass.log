@@ -1,0 +1,263 @@
+==> loopback_net=isolated (entered after the builds)
+==> NUMA same-socket pinning active: node 0, registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71; detected nodes with CPUs: 0 1
+==> settings: addr=127.0.0.1:55300 blob=1073741824B blobs=8 whole_blob=1 cold_cache=1 lifetimes=5 variants=both chunk=1073741824B requests=8 concurrency=1 auto_target_seconds=1.0 sweep_auto_target_seconds="1.0" warmup=one-request-per-chunk-once-per-variant numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+==> fetching /path/to/sendfile-perf-repro/distribution/gh-pr/distribution refs
+==> using distribution commit 910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9 (910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9)
+==> keeping cached unpatched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-unpatched
+==> keeping cached patched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-patched
+==> LOOPBACK_NET=isolated: re-executing in a private network namespace
+==> loopback_net=isolated net_namespace=net:[4026542154] host_net_namespace=net:[4026531840] interfaces=lo netfilter_rules=empty(nft-list-ruleset)
+==> NUMA same-socket pinning active: node 0, registry CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70, client CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71; detected nodes with CPUs: 0 1
+==> settings: addr=127.0.0.1:55300 blob=1073741824B blobs=8 whole_blob=1 cold_cache=1 lifetimes=5 variants=both chunk=1073741824B requests=8 concurrency=1 auto_target_seconds=1.0 sweep_auto_target_seconds="1.0" warmup=one-request-per-chunk-once-per-variant numa=same-socket node=0 registry_cpus=0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70 client_cpus=1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+==> using distribution commit 910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9 (910dd4f20eacbe12c3a2eeec952f9a8b732bd6b9)
+==> keeping cached unpatched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-unpatched
+==> keeping cached patched registry build: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/bin/registry-patched
+==> preparing 8 deterministic blob(s) of 1073741824 bytes
+==> benchmark transport: http (HTTP/1.1), Go: go version go1.26.10 linux/arm64
+==> seeding local registry storage; this is not a measured run
+==> launching temporary storage-seeding registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-storage-seed.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> temporary storage-seeding registry ready with pid 1314878
+==> blob already present: sha256:e37f7c8cad74e0418675627ce019b1ed64c2e463bed90e348d9723fb5f31b7d1
+==> blob already present: sha256:82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b
+==> blob already present: sha256:9fe761da17d040d45b91f471153aa2647ddb5375fe287d8e53a3377db6398d3a
+==> blob already present: sha256:9ba15e4e714a6ed731b52d89a7d8dc56ed634085248ef9422cc802b3aa7aef87
+==> blob already present: sha256:7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624
+==> blob already present: sha256:2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd
+==> blob already present: sha256:739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4
+==> blob already present: sha256:a324bb9be0c21ad4d13e196fd9bbbf2666bcb48e138273b0890d3ebc28adf55c
+==> terminating temporary storage-seeding registry pid 1314878 on 127.0.0.1:55300
+==> terminated temporary storage-seeding registry pid 1314878
+==> process lifetime 1 of 5
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1315266
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+unpatched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=3.389s registry_cpu_total=2.830s registry_cpu_user=0.160s registry_cpu_kernel=2.670s cpu(one-core)=83.5% cpu(host)=2.32% throughput=2417.3 MiB/s cpu_per_GiB=0.354s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=3.377s registry_cpu_total=2.830s registry_cpu_user=0.190s registry_cpu_kernel=2.640s cpu(one-core)=83.8% cpu(host)=2.33% throughput=2425.7 MiB/s cpu_per_GiB=0.354s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=3.376s registry_cpu_total=2.820s registry_cpu_user=0.170s registry_cpu_kernel=2.650s cpu(one-core)=83.5% cpu(host)=2.32% throughput=2426.8 MiB/s cpu_per_GiB=0.352s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1315266 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1315266
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1316051
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=1.577s registry_cpu_total=0.800s registry_cpu_user=0.010s registry_cpu_kernel=0.790s cpu(one-core)=50.7% cpu(host)=1.41% throughput=5193.4 MiB/s cpu_per_GiB=0.100s
+patched: starting timed repetition 2 of 3
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 1562 drop attempts, 16173 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data needed 577 drop attempts, 5980 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/a3/a324bb9be0c21ad4d13e196fd9bbbf2666bcb48e138273b0890d3ebc28adf55c/data needed 967 drop attempts, 9992 ms, until no page was resident
+patched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=1.723s registry_cpu_total=0.780s registry_cpu_user=0.010s registry_cpu_kernel=0.770s cpu(one-core)=45.3% cpu(host)=1.26% throughput=4755.6 MiB/s cpu_per_GiB=0.098s
+patched: starting timed repetition 3 of 3
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/9b/9ba15e4e714a6ed731b52d89a7d8dc56ed634085248ef9422cc802b3aa7aef87/data needed 73 drop attempts, 754 ms, until no page was resident
+cold page cache: waiting for 16 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 1547 drop attempts, 16034 ms, until no page was resident
+patched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=1.887s registry_cpu_total=0.790s registry_cpu_user=0.010s registry_cpu_kernel=0.780s cpu(one-core)=41.9% cpu(host)=1.16% throughput=4340.2 MiB/s cpu_per_GiB=0.099s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1316051 on 127.0.0.1:55300
+==> terminated patched registry pid 1316051
+==> process lifetime 2 of 5
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1317711
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data to become droppable (10 s)
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data to become droppable (21 s)
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data to become droppable (31 s)
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data to become droppable (41 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data needed 4746 drop attempts, 49023 ms, until no page was resident
+unpatched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=3.428s registry_cpu_total=2.900s registry_cpu_user=0.130s registry_cpu_kernel=2.770s cpu(one-core)=84.6% cpu(host)=2.35% throughput=2389.4 MiB/s cpu_per_GiB=0.362s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=3.402s registry_cpu_total=2.880s registry_cpu_user=0.170s registry_cpu_kernel=2.710s cpu(one-core)=84.6% cpu(host)=2.35% throughput=2407.7 MiB/s cpu_per_GiB=0.360s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=3.432s registry_cpu_total=2.890s registry_cpu_user=0.140s registry_cpu_kernel=2.750s cpu(one-core)=84.2% cpu(host)=2.34% throughput=2386.8 MiB/s cpu_per_GiB=0.361s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1317711 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1317711
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1319413
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=1.577s registry_cpu_total=0.780s registry_cpu_user=0.000s registry_cpu_kernel=0.780s cpu(one-core)=49.4% cpu(host)=1.37% throughput=5193.4 MiB/s cpu_per_GiB=0.098s
+patched: starting timed repetition 2 of 3
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/9f/9fe761da17d040d45b91f471153aa2647ddb5375fe287d8e53a3377db6398d3a/data needed 5 drop attempts, 49 ms, until no page was resident
+cold page cache: waiting for 47 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/2c/2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd/data to become droppable (10 s)
+cold page cache: waiting for 16 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/2c/2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd/data to become droppable (21 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/2c/2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd/data needed 2623 drop attempts, 27178 ms, until no page was resident
+patched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=1.649s registry_cpu_total=0.780s registry_cpu_user=0.000s registry_cpu_kernel=0.780s cpu(one-core)=47.3% cpu(host)=1.31% throughput=4968.0 MiB/s cpu_per_GiB=0.098s
+patched: starting timed repetition 3 of 3
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/e3/e37f7c8cad74e0418675627ce019b1ed64c2e463bed90e348d9723fb5f31b7d1/data to become droppable (10 s)
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/e3/e37f7c8cad74e0418675627ce019b1ed64c2e463bed90e348d9723fb5f31b7d1/data to become droppable (21 s)
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/e3/e37f7c8cad74e0418675627ce019b1ed64c2e463bed90e348d9723fb5f31b7d1/data to become droppable (31 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/e3/e37f7c8cad74e0418675627ce019b1ed64c2e463bed90e348d9723fb5f31b7d1/data needed 3711 drop attempts, 38455 ms, until no page was resident
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 1181 drop attempts, 12213 ms, until no page was resident
+patched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=1.886s registry_cpu_total=0.760s registry_cpu_user=0.010s registry_cpu_kernel=0.750s cpu(one-core)=40.3% cpu(host)=1.12% throughput=4344.0 MiB/s cpu_per_GiB=0.095s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1319413 on 127.0.0.1:55300
+==> terminated patched registry pid 1319413
+==> process lifetime 3 of 5
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1321609
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+cold page cache: waiting for 16 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (10 s)
+cold page cache: waiting for 16 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (21 s)
+cold page cache: waiting for 16 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (31 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 3141 drop attempts, 32526 ms, until no page was resident
+unpatched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=3.415s registry_cpu_total=2.890s registry_cpu_user=0.140s registry_cpu_kernel=2.750s cpu(one-core)=84.6% cpu(host)=2.35% throughput=2398.7 MiB/s cpu_per_GiB=0.361s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=3.392s registry_cpu_total=2.850s registry_cpu_user=0.170s registry_cpu_kernel=2.680s cpu(one-core)=84.0% cpu(host)=2.33% throughput=2414.9 MiB/s cpu_per_GiB=0.356s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=3.389s registry_cpu_total=2.840s registry_cpu_user=0.160s registry_cpu_kernel=2.680s cpu(one-core)=83.8% cpu(host)=2.33% throughput=2417.1 MiB/s cpu_per_GiB=0.355s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1321609 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1321609
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1323063
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=1.810s registry_cpu_total=0.790s registry_cpu_user=0.010s registry_cpu_kernel=0.780s cpu(one-core)=43.6% cpu(host)=1.21% throughput=4526.2 MiB/s cpu_per_GiB=0.099s
+patched: starting timed repetition 2 of 3
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 20 drop attempts, 206 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data needed 42 drop attempts, 433 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/a3/a324bb9be0c21ad4d13e196fd9bbbf2666bcb48e138273b0890d3ebc28adf55c/data needed 439 drop attempts, 4548 ms, until no page was resident
+patched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=1.785s registry_cpu_total=0.760s registry_cpu_user=0.010s registry_cpu_kernel=0.750s cpu(one-core)=42.6% cpu(host)=1.18% throughput=4588.6 MiB/s cpu_per_GiB=0.095s
+patched: starting timed repetition 3 of 3
+cold page cache: waiting for 25 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 1862 drop attempts, 19307 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data needed 678 drop attempts, 7020 ms, until no page was resident
+patched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=1.717s registry_cpu_total=0.770s registry_cpu_user=0.000s registry_cpu_kernel=0.770s cpu(one-core)=44.9% cpu(host)=1.25% throughput=4772.2 MiB/s cpu_per_GiB=0.096s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1323063 on 127.0.0.1:55300
+==> terminated patched registry pid 1323063
+==> process lifetime 4 of 5
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1324237
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+cold page cache: waiting for 31 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data needed 1230 drop attempts, 12724 ms, until no page was resident
+unpatched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=3.407s registry_cpu_total=2.880s registry_cpu_user=0.170s registry_cpu_kernel=2.710s cpu(one-core)=84.5% cpu(host)=2.35% throughput=2404.4 MiB/s cpu_per_GiB=0.360s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=3.385s registry_cpu_total=2.880s registry_cpu_user=0.180s registry_cpu_kernel=2.700s cpu(one-core)=85.1% cpu(host)=2.36% throughput=2420.3 MiB/s cpu_per_GiB=0.360s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=3.407s registry_cpu_total=2.900s registry_cpu_user=0.180s registry_cpu_kernel=2.720s cpu(one-core)=85.1% cpu(host)=2.36% throughput=2404.4 MiB/s cpu_per_GiB=0.362s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1324237 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1324237
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1325167
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=1.574s registry_cpu_total=0.790s registry_cpu_user=0.000s registry_cpu_kernel=0.790s cpu(one-core)=50.2% cpu(host)=1.39% throughput=5204.1 MiB/s cpu_per_GiB=0.099s
+patched: starting timed repetition 2 of 3
+cold page cache: waiting for 32 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/82/82e6f6b1eb799c5ef199a63ef0eb6fe03eeecb1bb198cbc84b5f87da4edb5e1b/data needed 1739 drop attempts, 18015 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data needed 953 drop attempts, 9866 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/a3/a324bb9be0c21ad4d13e196fd9bbbf2666bcb48e138273b0890d3ebc28adf55c/data needed 20 drop attempts, 204 ms, until no page was resident
+patched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=1.740s registry_cpu_total=0.790s registry_cpu_user=0.010s registry_cpu_kernel=0.780s cpu(one-core)=45.4% cpu(host)=1.26% throughput=4708.7 MiB/s cpu_per_GiB=0.099s
+patched: starting timed repetition 3 of 3
+cold page cache: waiting for 17 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/9b/9ba15e4e714a6ed731b52d89a7d8dc56ed634085248ef9422cc802b3aa7aef87/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/9b/9ba15e4e714a6ed731b52d89a7d8dc56ed634085248ef9422cc802b3aa7aef87/data needed 1846 drop attempts, 19069 ms, until no page was resident
+patched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=1.782s registry_cpu_total=0.780s registry_cpu_user=0.010s registry_cpu_kernel=0.770s cpu(one-core)=43.8% cpu(host)=1.22% throughput=4596.9 MiB/s cpu_per_GiB=0.098s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1325167 on 127.0.0.1:55300
+==> terminated patched registry pid 1325167
+==> process lifetime 5 of 5
+==> launching unpatched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-unpatched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> unpatched registry ready with pid 1326792
+==> running unpatched timed repetitions in one client process
+==> running unpatched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+unpatched: cold page cache: no warmup requests
+unpatched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+unpatched: starting timed repetition 1 of 3
+cold page cache: waiting for 25 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/2c/2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/2c/2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd/data needed 1027 drop attempts, 10636 ms, until no page was resident
+unpatched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=3.440s registry_cpu_total=2.930s registry_cpu_user=0.170s registry_cpu_kernel=2.760s cpu(one-core)=85.2% cpu(host)=2.37% throughput=2381.1 MiB/s cpu_per_GiB=0.366s
+unpatched: starting timed repetition 2 of 3
+unpatched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=3.421s registry_cpu_total=2.910s registry_cpu_user=0.140s registry_cpu_kernel=2.770s cpu(one-core)=85.1% cpu(host)=2.36% throughput=2394.9 MiB/s cpu_per_GiB=0.364s
+unpatched: starting timed repetition 3 of 3
+unpatched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+unpatched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=3.423s registry_cpu_total=2.890s registry_cpu_user=0.170s registry_cpu_kernel=2.720s cpu(one-core)=84.4% cpu(host)=2.35% throughput=2393.0 MiB/s cpu_per_GiB=0.361s
+==> completed unpatched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating unpatched registry pid 1326792 on 127.0.0.1:55300
+==> terminated unpatched registry pid 1326792
+==> launching patched registry on http://127.0.0.1:55300 with config /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/run/20261112T154618Z/http/config-patched.yml, NUMA node 0 CPUs 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70
+==> patched registry ready with pid 1327635
+==> running patched timed repetitions in one client process
+==> running patched repeated load client on NUMA node 0 CPUs 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71
+patched: cold page cache: no warmup requests
+patched: warmup=0.300s selected_requests=8 concurrency=1 chunks=1 covered_all=true
+patched: starting timed repetition 1 of 3
+patched-r1: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r1: requests=8 concurrency=1 max_incoming_responses=1 wall=1.576s registry_cpu_total=0.800s registry_cpu_user=0.010s registry_cpu_kernel=0.790s cpu(one-core)=50.7% cpu(host)=1.41% throughput=5196.5 MiB/s cpu_per_GiB=0.100s
+patched: starting timed repetition 2 of 3
+cold page cache: waiting for 19 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (10 s)
+cold page cache: waiting for 19 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data to become droppable (21 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/7a/7a207e76a756d2f95e04b8853d30f4c9bd8c631aec5149a824fef1b68efb0624/data needed 2890 drop attempts, 29958 ms, until no page was resident
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/2c/2c4eae3e4e3371ce41b0aa9d0382a1113c486f5ef291763db6231d690f5563cd/data needed 650 drop attempts, 6734 ms, until no page was resident
+patched-r2: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r2: requests=8 concurrency=1 max_incoming_responses=1 wall=1.936s registry_cpu_total=0.780s registry_cpu_user=0.000s registry_cpu_kernel=0.780s cpu(one-core)=40.3% cpu(host)=1.12% throughput=4231.5 MiB/s cpu_per_GiB=0.098s
+patched: starting timed repetition 3 of 3
+cold page cache: waiting for 31 resident pages of /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data to become droppable (10 s)
+cold page cache: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/registry-storage/docker/registry/v2/blobs/sha256/73/739661f8bec19509396b03ad42cc5465bc1dd625e8982561f65f47faccf6d2c4/data needed 1845 drop attempts, 19105 ms, until no page was resident
+patched-r3: cold page cache: 8 blob files, 131072 pages, resident before=0 after=131072
+patched-r3: requests=8 concurrency=1 max_incoming_responses=1 wall=1.574s registry_cpu_total=0.760s registry_cpu_user=0.000s registry_cpu_kernel=0.760s cpu(one-core)=48.3% cpu(host)=1.34% throughput=5204.6 MiB/s cpu_per_GiB=0.095s
+==> completed patched timed repetitions; stopping registry on 127.0.0.1:55300
+==> terminating patched registry pid 1327635 on 127.0.0.1:55300
+==> terminated patched registry pid 1327635
+==> done; session results: /path/to/sendfile-perf-repro/distribution/repro/work/filereader-bypass/results/20261112T154618Z
